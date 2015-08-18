@@ -179,6 +179,9 @@ kbd a:hover, kbd:hover, kbd:active {
 	& + .btn {
 		margin-left: $double;
 	}
+	&._nav {
+		margin-top: 0;
+	}
 }
 
 
