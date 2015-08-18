@@ -171,6 +171,9 @@ kbd a:hover, kbd:hover, kbd:active {
 	user-select: none;
 	@include link-highlight($color-white, $color-white);
 	&:hover {
+		background-color: $color-brightblue;
+	}
+	&:active {
 		background-color: $color-black;
 	}
 	&:focus {
