@@ -1,4 +1,4 @@
-// Locally hosted Google Fonts
+//	Locally hosted Google Fonts
 
 @font-face {
     font-family: "Roboto Slab";
@@ -7,6 +7,7 @@
     src: url('../fonts/RobotoSlab-Light.eot');
     src: local("Roboto Slab Light"), local("RobotoSlab-Light"), url('../fonts/RobotoSlab-Light.eot?#iefix') format("embedded-opentype"), url('../fonts/RobotoSlab-Light.woff') format("woff"), url('../fonts/RobotoSlab-Light.ttf') format("truetype")
     }
+
 @font-face {
     font-family: "Roboto Slab";
     font-style: normal;
@@ -14,6 +15,16 @@
     src: url('../fonts/RobotoSlab-Regular.eot');
     src: local("Roboto Slab Regular"), local("RobotoSlab-Regular"), url('../fonts/RobotoSlab-Regular.eot?#iefix') format("embedded-opentype"), url('../fonts/RobotoSlab-Regular.woff') format("woff"), url('../fonts/RobotoSlab-Regular.ttf') format("truetype")
     }
+
+@font-face {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 900;
+    src: url('../fonts/Roboto-Black-webfont.eot');
+    src: local("Roboto Black"), local("Roboto-Black"), url('../fonts/Roboto-Black-webfont.eot?#iefix') format("embedded-opentype"), url('../fonts/Roboto-Black-webfont.eot.woff') format("woff"), url('../fonts/Roboto-Black-webfont.eot.ttf') format("truetype")
+    }
+
+
 @font-face {
     font-family: "Inconsolata";
     font-style: normal;

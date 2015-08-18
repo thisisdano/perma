@@ -1,0 +1,30 @@
+/////////////////////////
+
+//	dev()
+//	allows you to set an arbitrary max-width for your page for responsive testing
+//	ex: @include dev(320px);
+
+@mixin dev($width){
+	html { background-color: #eee; }
+	body {
+	    max-width: #{$width}px;
+	}
+}
+
+/////////////////////////
+
+//	respond()
+//	add a min-width media query at the nth value in $respond-breakpoints
+// 	ex:
+// 	h1 {
+// 		font-size: $size-large;
+// 		@include respond(3) {
+// 			font-size: $size-1xlarge;
+// 		} 
+//	}
+
+@mixin respond($n) {
+	@media only screen and (min-width: nth($respond-breakpoints, $n) + 1) {
+		@content;
+	}
+}
