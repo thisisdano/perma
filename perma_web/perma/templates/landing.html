@@ -12,31 +12,32 @@
     <div class="container">
     	<div class="row welcome">
         	<div class="col-sm-6">
-        		<p class="mega">Websites Change, Go Away and Get Taken Down</p>
-				
-				
-				<p><a href="{% url 'landing' %}"><span class="orange">Perma.cc</span></a> helps scholars, journals and courts create permanent links to the online sources cited in their work. <a href="http://perma.cc/4RH7-999Q" target="_blank">Here's an example.</a></p>
-
-				<br/>
-
-                {% if request.user.is_authenticated %}
-                    <p><a href="{% url 'link_browser' %}" class="btn btn-large btn-success">Visit Your Dashboard</a></p>
-                {% else %}
-				    <p><a href="{% url 'sign_up' %}" class="btn btn-large btn-success">Learn more and sign up</a></p>
-                {% endif %}
-			
+        		<div class="content">
+	        		<p class="mega">Websites Change, Go Away and Get Taken Down</p>
+					
+					
+					<p><a href="{% url 'landing' %}"><span class="orange">Perma.cc</span></a> helps scholars, journals and courts create permanent links to the online sources cited in their work. <a href="http://perma.cc/4RH7-999Q" target="_blank">Here’s an example.</a></p>
+	
+	                {% if request.user.is_authenticated %}
+	                    <p><a href="{% url 'link_browser' %}" class="btn btn-large btn-success">Visit your Dashboard</a></p>
+	                {% else %}
+					    <p><a href="{% url 'sign_up' %}" class="btn btn-large btn-success">Learn more and sign up</a></p>
+	                {% endif %}
+        		</div>
 			</div>	
 			
 			
 			<div class="col-sm-6">
-				<a href="http://perma.cc/FC7M-CRS9" target="_blank"><img class="img-responsive" src="{{ STATIC_URL }}img/citation-small.jpg" alt="Perma.cc logo. An infinity symbol." /></a>
-				<!--<div class="">
-				<img  name="citation" src="{{ STATIC_URL }}img/citation.png" width="1168" height="952" border="0" id="citation" usemap="#m_citation" alt="" />
-				<map name="m_citation" id="m_citation">
-					<area shape="rect" coords="135,714,555,770" href="http://perma.cc/HX7J-JMHE" target="_blank" alt="" />
-					<area shape="rect" coords="99,506,644,565" href="http://perma.cc/FC7M-CRS9" target="_blank" alt="" />
-				</map>
-				</div>-->
+        		<div class="content">
+					<a href="http://perma.cc/FC7M-CRS9" target="_blank"><img class="img-responsive" src="{{ STATIC_URL }}img/citation-small.jpg" alt="Perma.cc logo. An infinity symbol." /></a>
+					<!--<div class="">
+					<img  name="citation" src="{{ STATIC_URL }}img/citation.png" width="1168" height="952" border="0" id="citation" usemap="#m_citation" alt="" />
+					<map name="m_citation" id="m_citation">
+						<area shape="rect" coords="135,714,555,770" href="http://perma.cc/HX7J-JMHE" target="_blank" alt="" />
+						<area shape="rect" coords="99,506,644,565" href="http://perma.cc/FC7M-CRS9" target="_blank" alt="" />
+					</map>
+					</div>-->
+        		</div>
 			</div>	
 		</div>	<!--row-->
 	</div><!--container-->	
@@ -45,12 +46,16 @@
     	 <div class="container">
 			<div class="row">
 				<div class="col-sm-6">
-					<div id="plot-map-container"></div>
+	        		<div class="content">
+						<div id="plot-map-container"></div>
+	        		</div>
 				</div><!--col-sm-6-->
 				<div class="col-sm-6">
-					<p class="mega"><span class="orange">Powered by Libraries</span></p>
-					<p>Perma.cc is powered by libraries because we're in the forever business. We're already looking after printed materials. It's time we did the same for links.</p>
-					<p><a href="{% url 'libraries' %}" class="btn btn-large btn-more">RESOURCES FOR LIBRARIES</a></p>
+	        		<div class="content">
+						<p class="mega"><span class="orange">Powered by Libraries</span></p>
+						<p>Perma.cc is powered by libraries because we’re both in the forever business. We’re already looking after printed materials. It’s time we did the same for links.</p>
+						<p><a href="{% url 'libraries' %}" class="btn btn-large btn-more">Resources for libraries</a></p>
+	        		</div>
 				</div><!--col-sm-6-->
 			</div><!--row-->
 			<div class="row">

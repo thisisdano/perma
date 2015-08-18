@@ -73,7 +73,9 @@ h4 {
 	font-size: 22px;
 }
 
-a {}
+p a {
+	font-weight: 400;
+}
 
 h5 a {
 	color: #333;
@@ -131,7 +133,50 @@ kbd a:hover, kbd:hover, kbd:active {
 
 .container {
 	@extend %style-container;
+	.container {
+		padding-left: 0;
+		padding-right: 0;
+	}
 }
+
+.row {
+	.col-sm-6 + .col-sm-6 {
+		@include respond-tablet {
+			padding-left: $grid * 4
+		}
+	}
+}
+
+.btn {
+	display: inline-block;
+	margin: 16px 0;
+	font-family: $font-hed-alt;
+	color: white;
+	font-weight: 900;
+	font-size: 16px;
+	white-space: nowrap;
+	padding: $double $grid * 3;
+	margin-bottom: 0;
+	text-align: center;
+	vertical-align: middle;
+	cursor: pointer;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	background-color: $color-trans-gray;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+	@include link-highlight($color-white, $color-white);
+	&:hover {
+		background-color: $color-black;
+	}
+	&:focus {
+		border-color: $color-trans-darkgray;
+	}
+}
+
 
 /////////////////////////
 
@@ -261,6 +306,7 @@ header navbar-header ul li a.this-page {
 	@include respond-tablet {
 		height: $height-nav-tablet;
 		font-size: 36px;
+		padding-bottom: $half;
 	}
 	@include respond-desktop {
 		height: $height-nav-desktop;
@@ -652,19 +698,15 @@ ul#links {
 }
 
 section#home-description {
-    background-color: #fff;
-    padding: 35px 0 20px;
-    text-align: left;
+    padding: $grid * 7 0 $grid * 5;
 }
 
     section#home-description p {
         font-size: 20px;
-        line-height: 28px;
+        line-height: 1.5;
         margin-bottom: 30px;
         padding: 0;
     }
-
-    section#home-description .btn { text-transform: uppercase; }
 
     section#home-description p#subtext {
         font-size: 16px;
@@ -683,16 +725,6 @@ section#home-description {
     position: relative;
     overflow: hidden;
 
-    &:before {
-        //	shadow inside top and bottom of div -- stretch left and right to hide side shadows 
-        content: ' ';
-        position: absolute;
-        left: -20px;
-        top: 0;
-        right: -20px;
-        bottom: 0;
-        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.4) inset;
-    }
     .thumbnail {
         vertical-align: top;
         margin: 1em;
@@ -2347,12 +2379,18 @@ div.faq div.answer {
     display: none;
 }
 
+#home-description {
+	.btn {
+		background-color: $color-orange;
+		&:active { background-color: $color-black; }
+	}
+}
+
 #home-description p.mega, h3 .mega, .mega {
 	font-size: 36px;
-	color: $color-blue;
-	line-height: 48px;
-	font-family: 'Roboto Slab', sans-serif;
-	font-weight: 400;
+	color: $color-black;
+	line-height: 1.2;
+	font-weight: 300;
     margin-top: 0px;
 }
 
@@ -2384,15 +2422,14 @@ a.orange:hover, .orange:active {
 }
 
 .welcome2 {
-	background: #f7f7f7;
-	border: 1px solid #e6e6e6;
-	  -webkit-box-sizing: border-box; //	Safari/Chrome, other WebKit 
-   -moz-box-sizing: border-box;    //	Firefox, other Gecko 
-    box-sizing: border-box;
-    padding: 15px;
-    border-radius: 3px;
-    margin-top: 20px;
+	border: 1px solid $color-trans-lightgray;
+    padding: $grid * 7 $grid;
+    margin-top: $double;
 
+}
+
+#carousel-example-generic {
+	display: none;
 }
 
 img[usemap] {
@@ -2460,12 +2497,6 @@ ol li {
     box-sizing: border-box;
     border-radius: 3px;
 	font-family: 'Inconsolata', monospace;
-}
-
-.navbar-collapse {
-	margin-right: -20px;
-	padding-left: 0px;
-
 }
 
 .navbar-default .navbar-nav > li > a {
@@ -2538,9 +2569,6 @@ ul.nav.navbar-nav.tabbed {
 	z-index: 0;
 }
 
-.navbar-collapse.collapse {
-
-}
 
 .br-correction {
 	margin-top: -18px;
@@ -2858,10 +2886,6 @@ p.orange {
 		text-align: center;
 		left: 8%;
 	}
-	.navbar-collapse {
-		margin-left: 60px;
-		padding-left: 0px;
-    }
 }
 
 
@@ -2934,10 +2958,6 @@ p.orange {
 		border-radius: 3px;
 		margin: 10px 20px 20px 10px;
 		width: 100%
-	}
-	.navbar-collapse {
-		width: 100%;
-		margin: 0 0 10px;
 	}
 
 	.navbar-nav {

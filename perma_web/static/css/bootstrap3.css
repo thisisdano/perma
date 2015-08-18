@@ -2019,26 +2019,8 @@ textarea.input-lg {
   }
 }
 
-.btn {
-  display: inline-block;
-  padding: 6px 12px;
-  margin-bottom: 0;
-  font-size: 14px;
-  font-weight: normal;
-  line-height: 1.428571429;
-  text-align: center;
-  white-space: nowrap;
-  vertical-align: middle;
-  cursor: pointer;
-  border: 1px solid transparent;
-  border-radius: 4px;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-       -o-user-select: none;
-          user-select: none;
-}
 
+/* PENDING DELETION
 .btn:focus {
   outline: thin dotted #333;
   outline: 5px auto -webkit-focus-ring-color;
@@ -2399,6 +2381,7 @@ input[type="reset"].btn-block,
 input[type="button"].btn-block {
   width: 100%;
 }
+*/
 
 .fade {
   opacity: 0;

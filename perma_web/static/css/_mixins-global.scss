@@ -96,6 +96,15 @@ $width-max-respond: $width-wide + 1; 		// 1168px;
 
 @mixin link-underline($linkcolor, $highlightcolor){
 	color: $linkcolor;
+	text-decoration: underline;
+	&:link { color: $linkcolor; }
+	&:visited { color: $linkcolor}
+	&:hover { color: $highlightcolor; }
+	&:active { color: $linkcolor; }
+}
+
+@mixin link-underline-on-hover($linkcolor, $highlightcolor){
+	color: $linkcolor;
 	text-decoration: none;
 	&:link { color: $linkcolor; }
 	&:visited { color: $linkcolor}
@@ -104,9 +113,4 @@ $width-max-respond: $width-wide + 1; 		// 1168px;
 		text-decoration: underline;
 	}
 	&:active { color: $highlightcolor; }
-}
-
-@mixin underline-on-hover {
-	text-decoration: none;
-	&:hover { text-decoration: underline; }
 }
