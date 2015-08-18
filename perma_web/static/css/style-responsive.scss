@@ -76,6 +76,9 @@ h4 {
 p a {
 	font-family: $font-hed-alt;
 	font-weight: 900;
+	&:hover {
+		text-decoration: underline;
+	}
 }
 
 h5 a {
@@ -175,6 +178,7 @@ kbd a:hover, kbd:hover, kbd:active {
 	@include link-highlight($color-white, $color-white);
 	&:hover {
 		background-color: $color-brightblue;
+		text-decoration: none !important;
 	}
 	&:active {
 		background-color: $color-black;
