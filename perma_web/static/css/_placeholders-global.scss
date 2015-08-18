@@ -1,0 +1,38 @@
+/////////////////////////
+
+// placeholders used to extend common elements
+
+%style-clears-floats {
+	&:after {
+		display: table;
+		content: " ";
+		clear: both;
+	}
+}
+
+%style-block-centered {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+%style-container {
+	@extend %style-block-centered;
+	@extend %style-clears-floats;
+	padding-left: $grid;
+	padding-right: $grid;
+	max-width: $width-max;
+	overflow: auto;
+	@include respond-tablet {
+		padding-left: $double;
+		padding-right: $double;
+	}
+}
+
+%style-vcenter-parent {
+	display: table;
+}
+
+%style-vcenter-child {
+	display: table-cell;
+	vertical-align: middle;
+}

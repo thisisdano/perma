@@ -15,11 +15,16 @@ $width-mobile: $grid * 40; 		// 320px;
 $width-xmobile: $grid * 48; 	// 376px;
 $width-tablet: $grid * 80; 		// 640px;
 $width-desktop: $grid * 131; 	// 1048px;
-$width-wide: $grid * 162; 		// 1296px;
-$width-max: $grid * 162; 		// 1296px;
+$width-wide: $grid * 146; 		// 1168px;
+$width-max: $width-wide; 		// 1168px;
 
 $width-column: $width-mobile;
 $width-sidebar: $grid * 22; 	// 172px;
+
+$height-nav-mobile: $grid * 7;
+$height-nav-xmobile: $grid * 8;
+$height-nav-tablet: $grid * 10;
+$height-nav-desktop: $grid * 12;
 
 /////////////////////////
 
@@ -53,6 +58,7 @@ $color-trans-lightwhite: rgba(254,254,254,.25);
 $font-body: 'Roboto Slab', sans-serif;
 $font-hed:  "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 $font-hed-alt:  "Roboto", Helvetica, Arial, "Lucida Grande", sans-serif;
+$font-mono: 'Inconsolata', 'Courier', monospace;
 
 
 //	$font-name
@@ -67,5 +73,10 @@ $size-small: 12px;
 /////////////////////////
 
 //	respond
-
+ 
+//	1: xmobile
+//	2: tablet
+// 	3: desktop
+//	4: wide
+// 	5: max
 $respond-breakpoints: $width-mobile $width-xmobile $width-tablet $width-desktop $width-wide $width-max; // used with @mixin respond(n)
