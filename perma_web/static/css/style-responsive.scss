@@ -85,14 +85,17 @@ h5 a {
 }
 
 p {
-    margin-bottom: 20px;
-    font-family: 'Roboto Slab', sans-serif;
+    margin-bottom: 1em;
     font-weight: 300;
-    color: #000;
+    color: $color-black;
+}
+
+p.body {
+	font-size: 16px;
+    line-height: 1.6;
 }
 
 .docs p, .docs li {
-    font-family: 'Roboto Slab', sans-serif;
     font-weight: 300;
    	font-weight: 300;
    	font-size: 16px;
@@ -711,12 +714,17 @@ section#home-description {
     padding: $grid * 7 0 $grid * 5;
 }
 
-    section#home-description p {
-        font-size: 20px;
-        line-height: 1.5;
-        margin-bottom: 30px;
-        padding: 0;
+section#home-description p {
+    font-size: 20px;
+    line-height: 1.5;
+    margin-bottom: $grid * 4;
+    padding: 0;
+    &.body {
+		font-size: 16px;
+	    line-height: 1.6;
     }
+}
+
 
     section#home-description p#subtext {
         font-size: 16px;
