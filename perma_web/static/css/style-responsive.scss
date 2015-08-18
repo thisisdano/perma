@@ -196,6 +196,7 @@ kbd a:hover, kbd:hover, kbd:active {
 	}
 	&._nav {
 		margin-top: 0;
+		margin-left: $grid * 4;
 	}
 }
 
