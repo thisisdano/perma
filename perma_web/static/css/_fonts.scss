@@ -19,9 +19,17 @@
 @font-face {
     font-family: "Roboto";
     font-style: normal;
+    font-weight: 700;
+    src: url('../fonts/Roboto-Bold-webfont.eot');
+    src: local("Roboto Bold"), local("Roboto-Bold"), url('../fonts/Roboto-Bold-webfont.eot?#iefix') format("embedded-opentype"), url('../fonts/Roboto-Bold-webfont.woff') format("woff"), url('../fonts/Roboto-Bold-webfont.ttf') format("truetype")
+    }
+
+@font-face {
+    font-family: "Roboto";
+    font-style: normal;
     font-weight: 900;
     src: url('../fonts/Roboto-Black-webfont.eot');
-    src: local("Roboto Black"), local("Roboto-Black"), url('../fonts/Roboto-Black-webfont.eot?#iefix') format("embedded-opentype"), url('../fonts/Roboto-Black-webfont.eot.woff') format("woff"), url('../fonts/Roboto-Black-webfont.eot.ttf') format("truetype")
+    src: local("Roboto Black"), local("Roboto-Black"), url('../fonts/Roboto-Black-webfont.eot?#iefix') format("embedded-opentype"), url('../fonts/Roboto-Black-webfont.woff') format("woff"), url('../fonts/Roboto-Black-webfont.ttf') format("truetype")
     }
 
 

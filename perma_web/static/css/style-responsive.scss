@@ -152,8 +152,8 @@ kbd a:hover, kbd:hover, kbd:active {
 	display: inline-block;
 	margin: 16px 0;
 	font-family: $font-hed-alt;
-	color: white;
-	font-weight: 900;
+	color: $color-white;
+	font-weight: 700;
 	font-size: 16px;
 	white-space: nowrap;
 	padding: $double $grid * 3;
@@ -175,6 +175,9 @@ kbd a:hover, kbd:hover, kbd:active {
 	}
 	&:focus {
 		border-color: $color-trans-darkgray;
+	}
+	& + .btn {
+		margin-left: $double;
 	}
 }
 
@@ -2383,7 +2386,21 @@ div.faq div.answer {
 #home-description {
 	.btn {
 		background-color: $color-orange;
-		&:active { background-color: $color-black; }
+		&:hover { 
+			background-color: $color-brightblue; 
+		}
+		&:active { 
+			background-color: $color-black; 
+		}
+		&._primary {
+			background-color: $color-blue;
+			&:hover { 
+				background-color: $color-brightblue; 
+			}
+			&:active { 
+				background-color: $color-black; 
+			}
+		}
 	}
 }
 
