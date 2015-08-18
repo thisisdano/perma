@@ -2445,10 +2445,9 @@ a.orange:hover, .orange:active {
 }
 
 .welcome2 {
-	border: 1px solid $color-trans-lightgray;
     padding: $grid * 7 $grid;
-    margin-top: $double;
-
+    margin: $grid * 7 auto $grid * 4;
+	background-color: $color-khaki;
 }
 
 #carousel-example-generic {
