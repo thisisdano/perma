@@ -93,8 +93,8 @@ a.perma, p a.perma {
 	border-radius: 2px;
 	&:hover {
 		text-decoration: none;
-		border-color: $color-brightblue;
-		color: $color-brightblue;
+		border-color: $color-active;
+		color: $color-active;
 		&:before {
 			background-position-x: -30px * 3;
 		}
@@ -150,7 +150,7 @@ a.outside, p a.outside {
     }
 	&:hover {
 		text-decoration: none;
-		background-color: $color-brightblue;
+		background-color: $color-active;
 	}
 	&:active {
 		background-color: $color-black;
@@ -261,7 +261,7 @@ kbd a:hover, kbd:hover, kbd:active {
 	user-select: none;
 	@include link-highlight($color-white, $color-white);
 	&:hover {
-		background-color: $color-brightblue;
+		background-color: $color-active;
 		text-decoration: none !important;
 	}
 	&:active {
@@ -2603,7 +2603,7 @@ div.faq div.answer {
 	.btn {
 		background-color: $color-orange;
 		&:hover { 
-			background-color: $color-brightblue; 
+			background-color: $color-active; 
 		}
 		&:active { 
 			background-color: $color-black; 
@@ -2611,7 +2611,7 @@ div.faq div.answer {
 		&._primary {
 			background-color: $color-blue;
 			&:hover { 
-				background-color: $color-brightblue; 
+				background-color: $color-active; 
 			}
 			&:active { 
 				background-color: $color-black; 
