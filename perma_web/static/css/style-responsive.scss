@@ -360,6 +360,7 @@ header navbar-header ul li a.this-page {
 // 	min-width: 235px;
 //	text-decoration: none;
 	font-family: $font-hed-alt;
+	font-weight: 900;
 	color: $color-black;
 	height: $height-nav-mobile;
 	font-size: 24px;
@@ -648,7 +649,7 @@ border-radius: 3px;
 	padding-top: $grid * 7;
 	.row {
 		margin-top: $grid * 4;
-		border-top: 1px solid $color-blue;
+		border-top: 1px solid $color-black;
 		padding-top: $grid * 4;
 	}
 	._image {
@@ -678,7 +679,9 @@ h4.how-point-title {
 }
 
 section#home-description p.how-point-subtitle {
-	color: $color-blue;
+	font-family: $font-hed-alt;
+	font-weight: 300;
+	color: $color-black;
 	font-size: 28px;
 	margin-top: 0;
 	line-height: 1.2;
@@ -861,7 +864,7 @@ section#home-description p {
     }
 
 #examples {
-    padding-top: 2em;
+    padding: $grid * 7 0;
 
     //	stop :before element from resizing page 
     position: relative;
@@ -908,10 +911,6 @@ section#home-description p {
   }
 }
 
-#examples-items {
-    padding-bottom: 2em;
-}
-
 #example {
     div {
         text-align: center;
@@ -937,9 +936,8 @@ section#home-description p {
 }
 
 #supporting-partners {
-    //border-top: 1px solid #ccc;
-    box-shadow: 0px 20px 20px -20px rgba(0, 0, 0, 0.4) inset;
-    margin-top: 2em;
+    border-top: 1px solid $color-trans-lightgray;
+    margin-top: $grid * 7;
 }
     #supporting-partners .col-sm-12 {
         text-align: center;
@@ -2578,7 +2576,7 @@ a.orange:hover, .orange:active {
 
 .welcome2 {
     padding: $grid * 7 $grid;
-    margin: $grid * 7 auto $grid * 4;
+    margin: $grid * 7 auto 0;
 	background-color: $color-khaki;
 }
 

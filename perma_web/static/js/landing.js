@@ -139,9 +139,9 @@ $(function(){
             }
 
             // make sure content is in view
-            $('html, body').animate({
-                scrollTop: $example.offset().top-10
-            }, 1000);
+            //$('html, body').animate({
+            //    scrollTop: $example.offset().top-10
+            //}, 1000);
 
         }else{
             // they clicked the same button again; hide the $example panel
