@@ -1010,13 +1010,13 @@ section#home-description p {
     h3 {
         margin-bottom: $grid * 5;
         margin-top: 0;
-        font-family: $font-hed-alt;
+        font-family: $font-body;
         font-size: 20px;
         display: inline-block;
         border-bottom: 2px solid $color-blue;
         padding-bottom: $half;
         color: $color-black;
-        font-weight: 700;
+        font-weight: 400;
     }
     a {
 	    display: inline-block;
