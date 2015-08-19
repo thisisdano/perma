@@ -86,8 +86,8 @@ a.perma, p a.perma {
 	font-weight: 900;
 	color: $color-blue;
 	white-space: nowrap;
-	font-size: 14px;
-	padding: 6px 6px 6px 4px;
+	font-size: 12px;
+	padding: 4px 4px 4px 2px;
 	border: 2px solid $color-blue;
 	vertical-align: middle;
 	border-radius: 2px;
@@ -96,29 +96,49 @@ a.perma, p a.perma {
 		border-color: $color-active;
 		color: $color-active;
 		&:before {
-			background-position-x: -30px * 3;
+			background-position-x: -28px * 3;
 		}
 	}
 	&:active {
-		border: 1px solid $color-black;
+		border-color: $color-black;
 		color: $color-black;
 		&:before {
-			background-position-x: -30px * 1;
+			background-position-x: -28px * 1;
 		}
 	}
 	&:before {
 		content: '';
-		width: 30px;
+		width: 26px;
 		height: 14px;
 		display: inline-block;
 		margin-right: $half;
 		position: relative;
-		top: 2px;
+		top: 4px;
 		background-image: url('../img/ui/perma-ui-8-small.png');
 		background-repeat: no-repeat;
 		background-position: 0 0;
-		background-size: 180px 14px;
-		background-position-x: -30px * 2;
+		background-size: 167px 12px;
+		background-position-x: -28px * 2;
+	}
+	@include respond-tablet {
+		padding: 6px 6px 6px 4px;
+		font-size: 14px;
+		&:before {
+			width: 30px;
+			top: 2px;
+			background-size: 180px 14px;
+			background-position-x: -30px * 2;
+		}
+		&:hover {
+			&:before {
+				background-position-x: -30px * 1;
+			}
+		}
+		&:active {
+			&:before {
+				background-position-x: -30px * 1;
+			}
+		}
 	}
 }
 
@@ -239,7 +259,7 @@ kbd a:hover, kbd:hover, kbd:active {
 }
 
 .btn {
-	display: inline-block;
+	display: block;
 	margin: 16px 0;
 	font-family: $font-hed-alt;
 	color: $color-white;
@@ -260,15 +280,18 @@ kbd a:hover, kbd:hover, kbd:active {
 	-o-user-select: none;
 	user-select: none;
 	@include link-highlight($color-white, $color-white);
+	@include respond-tablet {
+		display: inline-block;
+		& + .btn {
+			margin-left: $double;
+		}
+	}
 	&:hover {
 		background-color: $color-active;
 		text-decoration: none !important;
 	}
 	&:active {
 		background-color: $color-black;
-	}
-	& + .btn {
-		margin-left: $double;
 	}
 	&._nav {
 		margin-top: 0;
@@ -907,19 +930,26 @@ ul#links {
     }
 }
 
-section#home-description {
-    padding: $grid * 7 0 0;
+#home-description {
+	padding: $double 0 0 0;
+	@include respond-tablet {
+		padding-top: $grid * 7;
+	}
 }
 
-section#home-description p {
-    font-size: 20px;
+#home-description p {
+    font-size: 16px;
     line-height: 1.5;
-    margin-bottom: $grid * 4;
+    margin-bottom: 1em;
     padding: 0;
     &.body {
 		font-size: 16px;
 	    line-height: 1.6;
     }
+	@include respond-tablet {
+	    font-size: 20px;
+	    margin-bottom: $grid * 4;
+	}
 }
 
 
@@ -1011,7 +1041,7 @@ section#home-description p {
     background-color: $color-background;
     padding: $grid * 7 0;
     text-align: center;
-    h3 {
+    h2 {
         margin-bottom: $grid * 5;
         margin-top: 0;
         font-family: $font-body;
@@ -2620,13 +2650,20 @@ div.faq div.answer {
 	}
 }
 
-#home-description p.mega, h3 .mega, .mega {
-	font-size: 36px;
+.mega {
 	color: $color-black;
 	line-height: 1.2;
 	font-weight: 300;
     margin-top: 0px;
     text-align: left;
+    font-size: 22px;
+    font-family: $font-hed-alt;
+    font-weight: 400;
+	@include respond-tablet {
+		font-size: 36px;
+		font-family: $font-body;
+		font-weight: 200;
+	}
 }
 
 #home-description .welcome2 p.mega {
