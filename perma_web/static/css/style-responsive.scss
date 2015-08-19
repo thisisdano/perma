@@ -81,6 +81,47 @@ p a {
 	}
 }
 
+a.perma, p a.perma {
+	font-family: $font-hed-alt;
+	font-weight: 900;
+	color: $color-blue;
+	white-space: nowrap;
+	font-size: 14px;
+	padding: 8px 8px 8px 6px;
+	border: 1px solid $color-blue;
+	vertical-align: middle;
+	border-radius: 2px;
+	&:hover {
+		text-decoration: none;
+		border: 1px solid $color-brightblue;
+		color: $color-brightblue;
+		&:before {
+			background-position-x: -30px * 3;
+		}
+	}
+	&:active {
+		border: 1px solid $color-black;
+		color: $color-black;
+		&:before {
+			background-position-x: -30px * 1;
+		}
+	}
+	&:before {
+		content: '';
+		width: 30px;
+		height: 14px;
+		display: inline-block;
+		margin-right: $half;
+		position: relative;
+		top: 2px;
+		background-image: url('../img/ui/perma-ui-8-small.png');
+		background-repeat: no-repeat;
+		background-position: 0 0;
+		background-size: 150px 14px;
+		background-position-x: -30px * 2;
+	}
+}
+
 h5 a {
 	color: #333;
 	margin-left: 15px;
@@ -566,10 +607,83 @@ border-radius: 3px;
 }
 
 .carousel-control {
-    background-color: #f7f7f7;
+    background-color: $color-khaki;
     @include opacity(.9);
     bottom: 0px;
 }
+
+.carousel {
+	.ui-chev-left, .ui-chev-right {
+		height: 25px;
+		width: 28px;
+		background-color: transparent;
+		display: inline-block;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		z-index: 5;
+		background-repeat: no-repeat;
+		background-position: 0 0;
+		background-size: 140px 25px;
+		&:hover {
+			background-position-x: -28px * 3;
+		}
+		&:active {
+			background-position-x: -28px * 1;
+		}
+	}
+	.ui-chev-left {
+		background-image: url('../img/ui/perma-ui-chev-left-big.png');
+	}
+	.ui-chev-right {
+		background-image: url('../img/ui/perma-ui-chev-right-big.png');
+	}
+}
+
+
+// home page sections
+
+#how-it-works {
+	border-top: 1px solid $color-trans-lightgray;
+	padding-top: $grid * 7;
+	.row {
+		margin-top: $grid * 4;
+		border-top: 1px solid $color-blue;
+		padding-top: $grid * 4;
+	}
+	._image {
+		padding: $grid * 6;
+	}
+	.row:nth-child(2n + 1) {
+		._image {
+			float: left;
+		}
+		._text {
+			float: right;
+		}
+	}
+}
+
+h4.how-point-title {
+	font-size: 32px;
+	font-family: $font-hed-alt;
+	font-weight: 900;
+	color: $color-orange;
+	margin-top: 0;
+	margin-bottom: 0;
+	line-height: 1.2;
+	.num {
+		color: $color-black;
+	}
+}
+
+section#home-description p.how-point-subtitle {
+	color: $color-blue;
+	font-size: 28px;
+	margin-top: 0;
+	line-height: 1.2;
+}
+
 
 //	Main 
 
@@ -2468,9 +2582,6 @@ a.orange:hover, .orange:active {
 	background-color: $color-khaki;
 }
 
-#carousel-example-generic {
-	display: none;
-}
 
 img[usemap] {
 		border: none;
@@ -2749,22 +2860,12 @@ a.btn.user-delete:hover, a.btn.user-delete:focus {
   	color: #222;
 }
 
-.btn-more {
-	border: 1px solid #ddd;
-	margin: 0px;
-	border-radius: 3px;
-	font-size: 18px;
-	background: #fff;
-	color: $color-blue;
-}
+.btn-more {}
 
 
 .btn-more:hover,
 .btn-more:focus,
-.btn-more:active {
-  color: #06a;
-  background: #f7f7f7;
-}
+.btn-more:active {}
 
 .darchive {
 	text-align: center;
