@@ -87,13 +87,13 @@ a.perma, p a.perma {
 	color: $color-blue;
 	white-space: nowrap;
 	font-size: 14px;
-	padding: 8px 8px 8px 6px;
-	border: 1px solid $color-blue;
+	padding: 6px 6px 6px 4px;
+	border: 2px solid $color-blue;
 	vertical-align: middle;
 	border-radius: 2px;
 	&:hover {
 		text-decoration: none;
-		border: 1px solid $color-brightblue;
+		border-color: $color-brightblue;
 		color: $color-brightblue;
 		&:before {
 			background-position-x: -30px * 3;
@@ -177,6 +177,9 @@ p.body {
 strong {
 	font-weight: 900;
 	font-family: $font-hed-alt;
+	&.vocab {
+		color: $color-orange;
+	}
 }
 
 .docs p, .docs li {
