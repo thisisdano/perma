@@ -122,6 +122,41 @@ a.perma, p a.perma {
 	}
 }
 
+a.outside, p a.outside {
+	font-family: $font-hed-alt;
+    font-weight: 300;
+    white-space: nowrap;
+    padding: 6px 12px;
+    background-color: $color-blue;
+    border-radius: 5em;
+    font-size: 14px;
+    margin: 0 $half;
+    &:visited, &:link {
+	    color: $color-white;
+    }
+    &:after {
+		content: '';
+		width: 9px;
+		height: 17px;
+		display: inline-block;
+		margin-left: $grid;
+		position: relative;
+		top: 3px;
+		background-image: url('../img/ui/perma-ui-chev-right-small.png');
+		background-repeat: no-repeat;
+		background-position: 0 0;
+		background-size: 54px 17px;
+		background-position-x: -9px * 5;
+    }
+	&:hover {
+		text-decoration: none;
+		background-color: $color-brightblue;
+	}
+	&:active {
+		background-color: $color-black;
+	}
+}
+
 h5 a {
 	color: #333;
 	margin-left: 15px;
@@ -241,6 +276,33 @@ kbd a:hover, kbd:hover, kbd:active {
 	}
 }
 
+.thumbnail, section#home-description .thumbnail {
+  display: inline-block;
+  height: auto;
+  max-width: 100%;
+  padding: $half;
+  line-height: 1.4;
+  background-color: $color-khaki;
+  text-align: left;
+  border-radius: 4px;
+  h4 {
+	  font-family: $font-hed-alt;
+	  font-weight: 900;
+	  font-size: 24px;
+	  color: $color-black;
+	  margin-bottom: 0;
+  }
+  p {
+	  margin-top: $grid;
+	  font-size: 16px;
+	  line-height: 1.6;
+	  margin-bottom: $double;
+  }
+}
+
+section#home-description .thumbnail {
+	display: table-cell;
+}
 
 /////////////////////////
 
@@ -865,7 +927,7 @@ section#home-description p {
 
 #examples {
     padding: $grid * 7 0;
-
+	text-align: center;
     //	stop :before element from resizing page 
     position: relative;
     overflow: hidden;
@@ -922,6 +984,7 @@ section#home-description p {
 
 #example-title {
     margin-bottom: 2em;
+    font-weight: 300;
 }
 
 #example-image-wrapper {
@@ -2546,6 +2609,7 @@ div.faq div.answer {
 	line-height: 1.2;
 	font-weight: 300;
     margin-top: 0px;
+    text-align: left;
 }
 
 #home-description .welcome2 p.mega {
