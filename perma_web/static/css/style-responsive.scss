@@ -268,7 +268,7 @@ kbd a:hover, kbd:hover, kbd:active {
 	font-weight: 400;
 	font-size: 14px;
 	white-space: nowrap;
-	padding: $double $grid * 3;
+	padding: $double $grid;
 	margin-bottom: 0;
 	text-align: center;
 	vertical-align: middle;
@@ -284,6 +284,7 @@ kbd a:hover, kbd:hover, kbd:active {
 	@include link-highlight($color-white, $color-white);
 	@include respond-tablet {
 		margin: $double 0;
+		padding: $double $grid * 3;
 		display: inline-block;
 		font-weight: 700;
 		font-size: 16px;
@@ -300,13 +301,11 @@ kbd a:hover, kbd:hover, kbd:active {
 	}
 	& + .btn {
 		margin-top: $grid * 2;
-		@include respond-tablet {
-			margin-top: 0;
-		}
 	}
 	&._nav {
 		margin-top: 0;
 		margin-left: $grid * 4;
+		margin-bottom: 0;
 	}
 }
 
@@ -845,7 +844,7 @@ margin-bottom: 10px;
 footer {
     color: white;
     text-align: left;
-    padding: $grid * 5 0;
+    padding: $grid * 3 0 $grid * 5;
     background: $color-blue;
     font-family: $font-hed-alt;
     .container {
@@ -855,7 +854,13 @@ footer {
 	    margin: 0;
     }
     li { 
+		padding-top: $half;
+		margin-top: $grid;
 		padding-top: $grid;
+		border-top: 1px solid $color-trans-textwhite;
+		&:first-child {
+			border-color: transparent;
+		}
 	}
 	a {
 		padding-bottom: $grid;
@@ -881,6 +886,9 @@ footer {
     }
     #footer-nav {
 	    padding-left: 0;
+	    li:first-child {
+		    margin-bottom: $double;
+	    }
 	    a {
 		    margin-right: $double;
 		    font-weight: 700;
@@ -891,6 +899,9 @@ footer {
 	    font-weight: 300;
 	    margin-top: 19px;
 	    padding-left: 0;
+	    li:first-child {
+		    border-color: $color-trans-textwhite;
+	    }
 	    a {
 		    font-weight: 400;
 	    }
@@ -902,11 +913,17 @@ footer {
 		}
 	    li {
 		    padding-top: 0;
+		    margin-top: 0;
+		    border-top: none;
+		    display: inline-block;
 	    }
 	    #li {
 		    display: inline-block;
 	    }
 	    #footer-nav {
+		    li:first-child {
+			    margin-bottom: 0;
+		    }
 		    float: left;
 	    }
 	    #boilerplate {
@@ -2868,7 +2885,58 @@ ul.navbar-nav.tabbed > li, ul.navbar-nav.tabbed > li a {
 	background: $color-blue;
 }
 
-button.navbar-toggle {
+// toggle
+
+.navbar-toggle {
+  position: relative;
+  float: right;
+  padding: 9px 10px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  background-color: $color-blue;
+  border-radius: 2px;
+  border: none;
+}
+
+.navbar-toggle:hover, .navbar-toggle:focus {
+  background: $color-highlight;
+}
+
+
+.navbar-toggle .icon-bar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  border-radius: 1px;
+}
+
+.navbar-toggle .icon-bar + .icon-bar {
+  margin-top: 4px;
+}
+
+tr.link-details
+{
+	display:none;
+}
+@media (min-width: 768px) {
+  .navbar-toggle {
+    display: none;
+  }
+}
+
+// when nav is open
+.navbar-collapse.in, .navbar-collapse.collapsing {
+	ul, li {
+		display: block;
+		text-align: right;
+	}
+	.navbar-nav {
+		height: auto;
+	}
+}
+
+
+.navbar-toggle {
 	margin-top: 10px;
 }
 

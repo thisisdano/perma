@@ -554,6 +554,7 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
       .removeClass('collapse')
       .addClass('collapsing')
       [dimension](0)
+	  
 
     this.transitioning = 1
 
@@ -564,6 +565,9 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
         [dimension]('auto')
       this.transitioning = 0
       this.$element.trigger('shown.bs.collapse')
+      $('header')
+        .removeClass('_default')
+        .addClass('_expanded')
     }
 
     if (!$.support.transition) return complete.call(this)
@@ -602,6 +606,9 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
         .trigger('hidden.bs.collapse')
         .removeClass('collapsing')
         .addClass('collapse')
+      $('header')
+        .removeClass('_expanded')
+        .addClass('_default')
     }
 
     if (!$.support.transition) return complete.call(this)
