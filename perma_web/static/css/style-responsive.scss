@@ -287,7 +287,7 @@ kbd a:hover, kbd:hover, kbd:active {
 	vertical-align: middle;
 	cursor: pointer;
 	border: 1px solid transparent;
-	border-radius: 4px;
+	border-radius: 2px;
 	background-color: $color-trans-gray;
 	-webkit-user-select: none;
 	-moz-user-select: none;
@@ -359,7 +359,7 @@ kbd a:hover, kbd:hover, kbd:active {
 		padding: 0;
 		margin-bottom: 0;
 		img {
-			padding: 0 $grid * 3 $grid * 3 $grid * 3;
+			padding: $grid * 3 $grid * 3 0 $grid * 3;
 		}
 	}
 }
@@ -780,7 +780,7 @@ border-radius: 3px;
 	padding-top: $grid * 4;
 	.row {
 		margin-top: $grid * 3;
-		border-top: 1px solid $color-black;
+		border-top: 1px solid $color-blue;
 		padding-top: $grid * 3;
 		margin-left: -$grid;
 		margin-right: -$grid;
@@ -789,6 +789,10 @@ border-radius: 3px;
 		@include respond-tablet {
 			margin-top: $grid * 4;
 			padding-top: $grid * 4;
+			padding-left: 0;
+			padding-right: 0;
+			margin-left: 0;
+			margin-right: 0;
 			&:nth-child(2n + 1) {
 				._image {
 					float: left;
@@ -869,7 +873,7 @@ h4.how-point-title {
 		display: table-cell;
 	}
 	.btn {
-		background-color: $color-orange;
+		background-color: $color-blue;
 		&:hover { 
 			background-color: $color-active; 
 		}
@@ -877,7 +881,7 @@ h4.how-point-title {
 			background-color: $color-black; 
 		}
 		&._primary {
-			background-color: $color-blue;
+			background-color: $color-orange;
 			&:hover { 
 				background-color: $color-active; 
 			}
@@ -1099,13 +1103,20 @@ ul#links {
         display: inline-block;
         vertical-align: middle;
     }
-    .caption {
+    .content {
         display: inline-block;
         vertical-align: middle;
 
         p: last-child {
             margin-bottom: 0;
         }
+    }
+    .btn {
+	    display: block;
+	    float: left;
+    }
+    .btn + .btn {
+	    margin-left: 1px;
     }
 }
 
@@ -1125,7 +1136,7 @@ ul#links {
     }
 }
 @media(min-width: 992px) {
-  #examples .caption {
+  #examples .content {
       width: 70%;
   }
 }
