@@ -51,25 +51,25 @@ $width-max-respond: $width-wide + 1; 		// 1168px;
 }
 
 @mixin respond-tablet {
-	@media only screen and (min-width: $width-tablet-respond) {
+	@media only screen and (min-width: $width-tablet) {
 		@content;
 	}
 }
 
 @mixin respond-desktop {
-	@media only screen and (min-width: $width-desktop-respond) {
+	@media only screen and (min-width: $width-desktop) {
 		@content;
 	}
 }
 
 @mixin respond-wide {
-	@media only screen and (min-width: $width-wide-respond) {
+	@media only screen and (min-width: $width-wide) {
 		@content;
 	}
 }
 
 @mixin respond-max {
-	@media only screen and (min-width: $width-max-respond) {
+	@media only screen and (min-width: $width-max) {
 		@content;
 	}
 }

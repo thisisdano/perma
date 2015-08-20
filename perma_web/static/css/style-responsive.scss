@@ -349,11 +349,18 @@ kbd a:hover, kbd:hover, kbd:active {
 }
 
 ._image {
-	img {
-		padding: 0 $grid * 3 $grid * 3 $grid * 3;
-	}
-	div.caption {
-		margin-top: 0;
+	box-shadow: -1px 0 2px 0 rgba(0,0,0,0.12) , 1px 0 2px 0 rgba(0,0,0,0.12) , 0 1px 1px 0 rgba(0,0,0,0.24);
+	border-radius: 2px;
+	padding: $grid * 3 $double;
+	margin-bottom: 3px;
+	@include respond-tablet {
+		box-shadow: none;
+		border-radius: 0;
+		padding: 0;
+		margin-bottom: 0;
+		img {
+			padding: 0 $grid * 3 $grid * 3 $grid * 3;
+		}
 	}
 }
 
@@ -770,7 +777,6 @@ border-radius: 3px;
 // home page sections
 
 #how-it-works {
-	border-top: 1px solid $color-trans-lightgray;
 	padding-top: $grid * 4;
 	.row {
 		margin-top: $double;
@@ -789,11 +795,9 @@ border-radius: 3px;
 			}
 		}
 	}
-	._image {
-		padding: $grid * 6;
-	}
 	@include respond-tablet {
 		padding-top: $grid * 7;
+		border-top: 1px solid $color-trans-lightgray;
 	}
 }
 
@@ -2789,9 +2793,10 @@ a.orange:hover, .orange:active {
 
 .welcome2 {
     padding: $double 0;
-    margin: $grid * 7 auto 0;
+    margin: $grid * 3 auto 0;
 	background-color: $color-background;
 	@include respond-tablet {
+	    margin-top: $grid * 7;
 	    padding: $grid * 7 0;
 	}
 }
