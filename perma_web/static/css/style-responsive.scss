@@ -440,6 +440,10 @@ kbd a:hover, kbd:hover, kbd:active {
 }
 
 
+.navbar-header {
+	z-index: 10;
+}
+
 header navbar-header ul {
     list-style: none;
     text-align: right;
