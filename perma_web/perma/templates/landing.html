@@ -5,6 +5,8 @@
 {% block styles %}
 {% endblock %}
 
+{% block bodyclass %}{% if request.user.is_authenticated %}_search{% else %}_welcome{% endif %}{% endblock %}
+
 {% block content %}
 
 <!-- URL input -->

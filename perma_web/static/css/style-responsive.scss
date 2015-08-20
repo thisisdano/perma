@@ -42,11 +42,16 @@ div.main-container {
 
 #main {
 	padding-top: $grid * 4;
-	padding-bottom: $grid * 3;
+	padding-bottom: $grid * 4;
 	background-color: $color-white;
 	@include respond-tablet {
 		padding-top: $grid * 7;
+		padding-bottom: $grid * 9;
 	}
+}
+
+body._welcome #main {
+	padding-bottom: 0;
 }
 
 /////////////////////////
@@ -70,6 +75,9 @@ body {
 	h1 {
 	    font-weight: 300;
 	    font-size: 40px;
+		@include respond-tablet {
+			font-size: $grid * 4;
+		}
 	}
 	
 	h2 {
@@ -414,11 +422,17 @@ body {
 		padding: $double $grid;
 		border: none;
 		margin: 0;
+		@include respond-tablet {
+			padding: $grid * 4 $grid * 3;
+		}
 	}
 	label, input {
 		display: block;
 		font-family: $font-hed-alt;
 		width: 100%;
+		@include respond-tablet {
+			width: auto;
+		}
 	}
 	label {
 		margin: 0; 
@@ -433,6 +447,9 @@ body {
 	}
 	button {
 		width: 100%;
+		@include respond-tablet {
+			width: auto;
+		}
 	}
 }
 
