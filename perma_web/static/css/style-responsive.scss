@@ -354,6 +354,9 @@ section#home-description .thumbnail {
 .navbar-default {
 	background: $color-white;
 	border-bottom: 1px solid $color-trans-lightgray;
+	.container {
+		overflow: visible;
+	}
 }
 
 .navbar-nav {
@@ -844,7 +847,7 @@ margin-bottom: 10px;
 footer {
     color: white;
     text-align: left;
-    padding: $grid * 3 0 $grid * 5;
+    padding: 0 0 $grid * 5;
     background: $color-blue;
     font-family: $font-hed-alt;
     .container {
@@ -2888,57 +2891,128 @@ ul.navbar-nav.tabbed > li, ul.navbar-nav.tabbed > li a {
 // toggle
 
 .navbar-toggle {
-  position: relative;
-  float: right;
-  padding: 9px 10px;
-  margin-top: 8px;
-  margin-bottom: 8px;
-  background-color: $color-blue;
-  border-radius: 2px;
-  border: none;
+	display: block;
+	position: absolute;
+	top: 0;
+    right: -$grid;
+    bottom: -1px;
+    width: $grid * 7;
+    border: none;
+    background-color: $color-blue;
+    margin: 0;
+    .icon-bar {
+	    background-color: $color-white;
+	    display: block;
+	    width: 22px;
+	    height: 2px;
+	    border-radius: 1px;
+	    margin-right: auto;
+	    margin-left: auto;
+	    & + .icon-bar {
+		    margin-top: $half;
+	    }
+    }
+    &:hover {
+	    background-color: $color-active;
+    }
+    &:active {
+	    background-color: $color-black;
+    }
+	@include respond-tablet {
+		display: none;
+	}
+	&:focus {
+		outline: none;
+	}
+	@include respond-xmobile {
+		width: $grid * 8;
+	}
 }
 
-.navbar-toggle:hover, .navbar-toggle:focus {
-  background: $color-highlight;
-}
-
-
-.navbar-toggle .icon-bar {
-  display: block;
-  width: 22px;
-  height: 2px;
-  border-radius: 1px;
-}
-
-.navbar-toggle .icon-bar + .icon-bar {
-  margin-top: 4px;
-}
-
-tr.link-details
-{
-	display:none;
-}
-@media (min-width: 768px) {
-  .navbar-toggle {
-    display: none;
-  }
-}
 
 // when nav is open
+
+.collapsing {
+    -webkit-transition: none;
+    transition: none;
+}
+
+header._expanded {
+	.navbar-toggle {
+		background-color: black;
+		&:hover {
+			background-color: $color-orange;
+		}
+		&:active {
+			background-color: $color-black;
+		}
+	}
+}
+
 .navbar-collapse.in, .navbar-collapse.collapsing {
+	margin-right: -$grid;
+	margin-left: -$grid;
+	background-color: black;
+	color: white;
+	font-family: $font-hed-alt;
 	ul, li {
 		display: block;
 		text-align: right;
 	}
+	li {
+		padding: 0 $grid;
+		margin-bottom: 0;
+		& + li {
+			border-top: 1px solid $color-trans-lightwhite;
+		}
+	}
 	.navbar-nav {
 		height: auto;
+		margin-bottom: $half;
+		margin-top: $half;
+	}
+	a.navbar-link, a.navbar-link:visited {
+		color: $color-white;
+		padding-right: 14px;
+		&:hover {
+			color: $color-orange;
+		}
+		&:active {
+			color: $color-blue;
+		}
+		&:after {
+		    content: '';
+		    height: 17px;
+		    width: 9px;
+		    display: inline-block;
+		    background-image: url('../img/ui/perma-ui-chev-right-small.png');
+		    background-repeat: no-repeat;
+		    background-size: 54px 17px;
+		    background-position: -9px * 3;
+		    top: 3px;
+			margin-left: $grid;
+		}
+		&:hover::after {
+		    background-position: -9px * 0;
+		}
+		&:active::after {
+		    background-position: -9px * 3;
+		}
+	}
+	.btn._nav {
+	    background-color: $color-blue;
+	    padding: $grid;
+	    margin: $grid 0;
+	    &:hover {
+		    background-color: $color-orange;
+	    }
+	    &:active {
+		    background-color: $color-blue;
+	    }
 	}
 }
 
 
-.navbar-toggle {
-	margin-top: 10px;
-}
 
 button.navbar-toggle.menu-adjust {
 	position: fixed;
@@ -2954,10 +3028,6 @@ button.navbar-toggle.menu-adjust {
 
 button.navbar-toggle.menu-adjust:hover, button.navbar-toggle.menu-adjust:active, button.navbar-toggle.menu-adjust:focus, button.navbar-toggle.menu-adjust: visited {
 	background: #06a;
-}
-
-.navbar-default .navbar-toggle .icon-bar {
-	background: #fff;
 }
 
 ul.nav.navbar-nav.tabbed {
