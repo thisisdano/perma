@@ -28,7 +28,7 @@
 			</div>	
 			
 			
-			<div class="col-sm-6">
+			<div class="col-sm-6 _image">
         		<div class="content">
 					<a href="http://perma.cc/FC7M-CRS9" target="_blank"><img class="img-responsive" src="{{ STATIC_URL }}img/citation-small.jpg" alt="Perma.cc logo. An infinity symbol." /></a>
 					<!--<div class="">
@@ -38,6 +38,9 @@
 						<area shape="rect" coords="99,506,644,565" href="http://perma.cc/FC7M-CRS9" target="_blank" alt="" />
 					</map>
 					</div>-->
+					<div class="caption">
+						<p>The <cite>Harvard Law Review</cite> uses Perma Links for citations to URLs in their articles.</p>
+					</div>
         		</div>
 			</div>	
 		</div>	<!--row-->
@@ -49,6 +52,9 @@
 				<div class="col-sm-6">
 	        		<div class="content">
 						<div id="plot-map-container"></div>
+						<div class="caption">
+							<p>Perma.cc is used and supported by libraries and institutions across America.</p>
+						</div>
 	        		</div>
 				</div><!--col-sm-6-->
 				<div class="col-sm-6">
@@ -147,6 +153,9 @@
                 </div>
                 <div class="col-sm-6 _image">
                     <img class="img-responsive" src="{{ STATIC_URL }}img/create-links.png" alt="An illustration of Perma.cc links being placed in a documents citations."/>
+					<div class="caption">
+						<p>Perma Links are short, consistent, and simple to add to academic and legal citations.</p>
+					</div>
                 </div>
             </div><!--row-->
 
@@ -154,11 +163,14 @@
                 <div class="col-sm-6 _text">
                     <h4 class="how-point-title" id="vest"><span class="num">2 /</span> Vest</h4>
                     <p class="how-point-subtitle">Approve your Perma Link.</p>
-                    <p>To keep your Perma Link active permanently, it needs to be vested (or “approved”) by someone affiliated with a <a href="{% url 'docs_perma_link_vesting' %}" class="vocab">Vesting Organization</a>, such as a library, journal, or court. Vesting assures that our Perma Links are valid, necessary, and correct. Perma.cc limits vesting privileges to help prevent abuse and to focus on solving the problem of link rot in academic and legal writing.</p>
+                    <p>To keep your Perma Link active permanently, it needs to be vested (or “approved”) by someone affiliated with a <a href="{% url 'docs_perma_link_vesting' %}" class="vocab">Vesting Organization</a>, such as a library, journal, or court. Vesting helps assure that our Perma Links are valid, necessary, and correct. Perma.cc limits vesting privileges to help prevent abuse and to focus on solving the problem of link rot in academic and legal writing.</p>
                     <p><a href="{% url 'docs_perma_link_vesting' %}" class="btn btn-large btn-more">More about vesting and Vesting Organizations</a></p>
                 </div>
                 <div class="col-sm-6 _image">
                     <img src="{{ STATIC_URL }}img/signal.png" class="img-responsive" alt="Responsive image" alt="A railroad light with green and red colors. Perma.cc archive need to be vested before they receive the permanent archive greenlight.">
+					<div class="caption">
+						<p>Vesting helps to assure that our Perma Links are valid, necessary, and correct.</p>
+					</div>
                 </div>
             </div>
             
@@ -171,6 +183,9 @@
 	            </div>
                 <div class="col-sm-6 _image">
                     <img class="img-responsive" src="{{ STATIC_URL }}img/shelf2.png" alt="An illustration of Perma.cc archives sitting next to books. Physical and digital archives are important to libraries."/>
+					<div class="caption">
+						<p>Perma.cc Records are preserved in perpetuity by our network of libraries and other institutions in the forever business.</p>
+					</div>
                 </div>
             </div>
 

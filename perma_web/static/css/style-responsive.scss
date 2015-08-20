@@ -194,6 +194,20 @@ p.body {
     line-height: 1.6;
 }
 
+div.caption {
+	margin-top: $grid * 3;
+}
+
+p.caption {
+	font-family: $font-hed-alt;
+	font-weight: 400;
+	color: $color-trans-darkgray;
+	font-size: 14px;
+	text-align: center;
+	max-width: 25em;
+	margin: 0 auto;
+}
+
 strong {
 	font-weight: 900;
 	font-family: $font-hed-alt;
@@ -309,7 +323,7 @@ kbd a:hover, kbd:hover, kbd:active {
 	}
 }
 
-.thumbnail, section#home-description .thumbnail {
+.thumbnail {
   display: inline-block;
   height: auto;
   max-width: 100%;
@@ -334,8 +348,13 @@ kbd a:hover, kbd:hover, kbd:active {
   }
 }
 
-section#home-description .thumbnail {
-	display: table-cell;
+._image {
+	img {
+		padding: 0 $grid * 3 $grid * 3 $grid * 3;
+	}
+	div.caption {
+		margin-top: 0;
+	}
 }
 
 /////////////////////////
@@ -794,20 +813,75 @@ h4.how-point-title {
 	}
 }
 
-section#home-description p.how-point-subtitle {
-	font-family: $font-hed-alt;
-	font-weight: 300;
-	color: $color-black;
-	font-size: 22px;
-	margin-top: 0;
-	line-height: 1.2;
-	margin-bottom: $grid;
+#home-description {
+	padding: $grid * 4 0 0 0;
 	@include respond-tablet {
-		font-size: 28px;
-		margin-bottom: $grid * 4;
+		padding-top: $grid * 7;
+	}
+	p {
+	    font-size: 16px;
+	    line-height: 1.5;
+	    margin-bottom: 1em;
+	    padding: 0;
+	    &.body {
+			font-size: 16px;
+		    line-height: 1.6;
+	    }
+		@include respond-tablet {
+		    font-size: 20px;
+		    margin-bottom: $grid * 4;
+		}
+	}
+	.caption p {
+		@extend p.caption;
+	}
+	p#subtext {
+        font-size: 16px;
+        margin: 0;
+    }
+    p#home-share-buttons {
+        background-color: #fc6;
+        margin: 20px 0 0 0;
+    }
+	p.how-point-subtitle {
+		font-family: $font-hed-alt;
+		font-weight: 300;
+		color: $color-black;
+		font-size: 22px;
+		margin-top: 0;
+		line-height: 1.2;
+		margin-bottom: $grid;
+		@include respond-tablet {
+			font-size: 28px;
+			margin-bottom: $grid * 4;
+		}
+	}
+	.thumbnail {
+		@extend .thumbnail;
+		display: table-cell;
+	}
+	.btn {
+		background-color: $color-orange;
+		&:hover { 
+			background-color: $color-active; 
+		}
+		&:active { 
+			background-color: $color-black; 
+		}
+		&._primary {
+			background-color: $color-blue;
+			&:hover { 
+				background-color: $color-active; 
+			}
+			&:active { 
+				background-color: $color-black; 
+			}
+		}
+	}
+	.welcome2 p.mega {
+	    margin-top: 10px;
 	}
 }
-
 
 //	Main 
 
@@ -999,39 +1073,6 @@ ul#links {
         margin-top: .5em;
     }
 }
-
-#home-description {
-	padding: $grid * 4 0 0 0;
-	@include respond-tablet {
-		padding-top: $grid * 7;
-	}
-}
-
-#home-description p {
-    font-size: 16px;
-    line-height: 1.5;
-    margin-bottom: 1em;
-    padding: 0;
-    &.body {
-		font-size: 16px;
-	    line-height: 1.6;
-    }
-	@include respond-tablet {
-	    font-size: 20px;
-	    margin-bottom: $grid * 4;
-	}
-}
-
-
-    section#home-description p#subtext {
-        font-size: 16px;
-        margin: 0;
-    }
-
-    section#home-description p#home-share-buttons {
-        background-color: #fc6;
-        margin: 20px 0 0 0;
-    }
 
 #examples {
     padding: $grid * 7 0;
@@ -2709,27 +2750,6 @@ div.faq div.answer {
     display: none;
 }
 
-#home-description {
-	.btn {
-		background-color: $color-orange;
-		&:hover { 
-			background-color: $color-active; 
-		}
-		&:active { 
-			background-color: $color-black; 
-		}
-		&._primary {
-			background-color: $color-blue;
-			&:hover { 
-				background-color: $color-active; 
-			}
-			&:active { 
-				background-color: $color-black; 
-			}
-		}
-	}
-}
-
 .mega {
 	color: $color-black;
 	line-height: 1.2;
@@ -2743,10 +2763,6 @@ div.faq div.answer {
 		font-family: $font-body;
 		font-weight: 200;
 	}
-}
-
-#home-description .welcome2 p.mega {
-    margin-top: 10px;
 }
 
 .title {
