@@ -40,32 +40,55 @@ div.main-container {
     width: 100%;
 }
 
+#main {
+	padding-top: $grid * 4;
+	padding-bottom: $grid * 3;
+	background-color: $color-white;
+	@include respond-tablet {
+		padding-top: $grid * 7;
+	}
+}
+
 /////////////////////////
 
 // general styles
 
-h1, h2, h3, h4, h5 { font-weight: normal; font-family: 'Roboto Slab', sans-serif; font-weight: 400}
+// this body tage used for specificity, since django-pipeline seems to be compiling the css in the wrong order.
 
-h1 {
-    margin-top: 40px;
-    margin-bottom: 30px;
-    color: $color-orange;
-}
+body {
+	h1, h2, h3, h4, h5 { 
+		font-family: $font-hed-alt; 
+		font-weight: 900;
+		line-height: 1.2;
+		margin: 0;
+		@include respond-tablet {
+			font-family: $font-body;
+			font-weight: 300;
+		}
+	}
+	
+	h1 {
+	    font-weight: 300;
+	    font-size: 40px;
+	}
+	
+	h2 {
+	    margin-top: 25px;
+	    font-size: 26px;
+	    color: $color-orange;
+	}
+	
+	h3 {
+		font-size: 28px;
+	}
+	
+	h4 {
+		color: $color-orange;
+	}
 
-h2 {
-    margin-top: 25px;
-    font-size: 26px;
-    color: $color-orange;
-}
-
-
-h3 {
-	font-size: 28px;
-}
-
-
-h4 {
-	color: $color-orange;
+	p {
+		line-height: 1.5;
+	}
 }
 
 .docs h4 {
@@ -276,7 +299,7 @@ kbd a:hover, kbd:hover, kbd:active {
 
 .btn {
 	display: block;
-	margin-top: $grid * 4;
+	margin-top: $grid * 3;
 	font-family: $font-hed-alt;
 	color: $color-white;
 	font-weight: 400;
@@ -286,7 +309,7 @@ kbd a:hover, kbd:hover, kbd:active {
 	text-align: center;
 	vertical-align: middle;
 	cursor: pointer;
-	border: 1px solid transparent;
+	border: none !important;
 	border-radius: 2px;
 	background-color: $color-trans-gray;
 	-webkit-user-select: none;
@@ -372,6 +395,46 @@ kbd a:hover, kbd:hover, kbd:active {
 .row { @extend %style-clears-floats }
 .container { @extend %style-clears-floats }
 
+
+
+/////////////////////////
+
+// forms
+
+// again, a body for pipelien specificity 
+
+body {
+	form {
+		margin-top: $grid * 3;
+	}
+	
+	fieldset {
+		background-color: $color-background;
+		border-radius: 4px;
+		padding: $double $grid;
+		border: none;
+		margin: 0;
+	}
+	label, input {
+		display: block;
+		font-family: $font-hed-alt;
+		width: 100%;
+	}
+	label {
+		margin: 0; 
+		font-weight: 400;
+		font-size: 14px;
+	}
+	input {
+		margin: $grid 0 0 0;
+	}
+	input + label {
+		margin-top: $double;
+	}
+	button {
+		width: 100%;
+	}
+}
 
 /////////////////////////
 
@@ -830,10 +893,7 @@ h4.how-point-title {
 }
 
 #home-description {
-	padding: $grid * 4 0 0 0;
-	@include respond-tablet {
-		padding-top: $grid * 7;
-	}
+	padding: 0;
 	p {
 	    font-size: 16px;
 	    line-height: 1.5;
@@ -899,12 +959,6 @@ h4.how-point-title {
 	}
 }
 
-//	Main 
-
-section#main {
-    background-color: $color-white;
-    padding: 0;
-}
 
 section#main-archive {
     background-color: #fff;
@@ -1137,6 +1191,7 @@ ul#links {
 
     #examples-items {
         border-spacing: 5px;
+        margin-top: $grid * 3;
     }
 }
 @media(min-width: 992px) {
@@ -2146,9 +2201,6 @@ ul#linky-ul li {
   margin-bottom: 15px;
 }
 
-fieldset {
-  margin-bottom: 15px;
-}
 
 #id_a-email: disabled {
     background: none;
@@ -2808,6 +2860,16 @@ a.orange:hover, .orange:active {
 
 .welcome, .welcome2 {
 	text-align: left;
+}
+
+.welcome {
+	.mega {
+		font-weight: 300;
+		font-size: 40px;
+		@include respond-tablet {
+			font-size: 36px;
+		}
+	}
 }
 
 .welcome2 {
