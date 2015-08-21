@@ -674,8 +674,107 @@ header navbar-header ul li a.this-page {
 }
 
 
+/////////////////////////
+
+// docs
+
+.user-docs {
+	margin-top: $grid * 6;
+}
+
+#docs-toc {
+	font-family: $font-hed-alt;
+	font-size: 14px;
+	@include respond-tablet {
+		padding-right: $grid * 6;
+	}
+
+	ul {
+		margin: 0;
+		padding: 0;
+	}
+
+	li {
+		margin: 0;
+		a {
+			display: block;
+			padding: 6px 0;
+			border-top: 1px solid $color-trans-lightgray;
+			&:hover {
+				color: $color-hover;
+				border-color: $color-hover;
+			}
+			&:active {
+				color: $color-active;
+				border-color: $color-active;
+			}
+		}
+	}
+
+	.docs-toc-chapter, .docs-toc-section {}
+	
+	li.docs-toc-chapter a {
+		font-weight: 700;
+		border-color: $color-black;
+	}
+	
+	li.docs-toc-section {
+		font-weight: 300;
+	}
+	
+	.docs-toc-section + .docs-toc-chapter {
+		margin-top: $grid * 3;
+	}
+
+    .red {
+        color: $color-error;
+        border: none;
+        font-weight: bold;
+    }
+}
+
+#docs-body {
+	h2, h3 {
+        font-size: 24px;
+	}
+	
+    h2 {
+        border-top: 1px solid $color-orange;
+        padding-top: $grid;
+        margin-top: $grid * 4;
+        font-family: $font-hed-alt;
+        font-weight: 700;
+        &:first-child {
+	        margin-top: 0;
+        }
+    }
+
+    h3 {
+        border-top: 1px solid $color-trans-lightgray;
+        padding-top: $grid;
+        margin-top: $grid * 4;
+        font-family: $font-hed-alt;
+        font-weight: 400;
+        font-size: 20px;
+        color: $color-black;
+    }
+        
+    p {
+        font-family: $font-body;
+        font-size: 16px;
+    }
 
 
+    table {
+        h4 {
+            font-size: 16px;
+        }
+
+        .table-center {
+            text-align: center;
+        }
+    }
+}
 
 
 /////////////////////////
@@ -3746,74 +3845,6 @@ p.orange {
 }
 
 //	Developer docs end 
-
-//	User docs 
-
-.user-docs {
-
-    h2 {
-        margin-top: 25px;
-        margin-bottom: 25px;
-    }
-
-    h4 {
-        margin-top: 25px;
-        margin-bottom: 25px;
-        font-size: 20px;
-        color: #333;
-    }
-      
-    p {
-        font-family: $font-hed;
-        font-size: 16px;
-        color: #555;
-    }
-
-
-    table {
-        h4 {
-            font-size: 16px;
-        }
-
-        .table-center {
-            text-align: center;
-        }
-    }
-
-    #docs-toc {
-        padding-top: 20px;
-        margin-bottom: 100px;
-
-        h2 {
-            font-size: 18px;
-            padding: 10px;
-            margin: 0px;
-            border-left: 2px solid #fff;
-        }
-        h3 {
-            font-size: 14px;
-            padding: 0px 5px 5px 15px;
-            margin: 0px;
-            color: #000;
-            border-left: 2px solid #fff;
-        }
-        h2:hover, h3:hover {
-            border-left: 2px solid #0099FF;
-            cursor: pointer;
-        }
-
-    }
-
-    #docs-body {
-        
-        .red {
-            color: red;
-            border: none;
-            font-weight: bold;
-        }
-       
-    }
-}
 
 
 //	End user docs  
