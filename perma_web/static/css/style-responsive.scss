@@ -451,6 +451,12 @@ body {
 			width: auto;
 		}
 	}
+	.form-group {
+		@include respond-tablet {
+			float: left;
+			width: 48%;
+		}
+	}
 	.form-group + .form-group {
 		margin-top: $double;
 	}
