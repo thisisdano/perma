@@ -124,8 +124,8 @@ a.perma, p a.perma {
 	border-radius: 2px;
 	&:hover {
 		text-decoration: none;
-		border-color: $color-active;
-		color: $color-active;
+		border-color: $color-hover;
+		color: $color-hover;
 		&:before {
 			background-position-x: -28px * 3;
 		}
@@ -201,7 +201,7 @@ a.outside, p a.outside {
     }
 	&:hover {
 		text-decoration: none;
-		background-color: $color-active;
+		background-color: $color-hover;
 	}
 	&:active {
 		background-color: $color-black;
@@ -277,6 +277,10 @@ kbd {
     white-space: nowrap;
 }
 
+.nobreak {
+	white-space: nowrap;	
+}
+
 .docs kbd a {
 	color: #fff;
 }
@@ -338,7 +342,7 @@ kbd a:hover, kbd:hover, kbd:active {
 		}
 	}
 	&:hover {
-		background-color: $color-active;
+		background-color: $color-hover;
 		text-decoration: none !important;
 	}
 	&:active {
@@ -414,6 +418,15 @@ kbd a:hover, kbd:hover, kbd:active {
 body {
 	form {
 		margin-top: $grid * 3;
+		.btn {
+			background-color: $color-blue;
+			&:hover {
+				background-color: $color-hover;
+			}
+			&:active {
+				background-color: $color-active;
+			}
+		}
 	}
 	
 	fieldset {
@@ -423,16 +436,13 @@ body {
 		border: none;
 		margin: 0;
 		@include respond-tablet {
-			padding: $grid * 4 $grid * 3;
+			padding: $grid $grid $grid * 3 $grid * 3;
 		}
 	}
 	label, input {
 		display: block;
 		font-family: $font-hed-alt;
 		width: 100%;
-		@include respond-tablet {
-			width: auto;
-		}
 	}
 	label {
 		margin: 0; 
@@ -441,6 +451,23 @@ body {
 	}
 	input {
 		margin: $grid 0 0 0;
+		font-weight: 700;
+	    font-size: 20px;
+	    border: 1px solid $color-trans-lightgray;
+	    border-radius: 4px;
+	    padding: $grid;
+	    background-color: white;
+	    outline: none;
+	    &:focus {
+		    border-color: $color-blue;
+		    color: $color-blue;
+		    background-color: $color-white;
+	    }
+	}
+	._error {
+		input {
+			border-color: $color-error;
+		}
 	}
 	input + label {
 		margin-top: $double;
@@ -452,13 +479,37 @@ body {
 		}
 	}
 	.form-group {
+		margin-bottom: 0;
 		@include respond-tablet {
 			float: left;
-			width: 48%;
+			width: 50%;
+			margin-top: $double;
+			padding-right: $double;
 		}
 	}
 	.form-group + .form-group {
 		margin-top: $double;
+	}
+	.text-error, .errorlist {
+		color: $color-error;
+		font-family: $font-hed-alt;
+		font-weight: 700;
+		font-size: 12px;
+		clear: both;
+		display: block;
+		padding-top: $double;
+	}
+	.errorlist {
+	  list-style-type: none;
+	  margin: 0;
+	  padding: 0;
+	  li {
+		  margin-bottom: 0;
+		  line-height: 1.4;
+		  & + li {
+			  margin-top: 4px;
+		  }
+	  }
 	}
 }
 
@@ -965,7 +1016,7 @@ h4.how-point-title {
 	.btn {
 		background-color: $color-blue;
 		&:hover { 
-			background-color: $color-active; 
+			background-color: $color-hover; 
 		}
 		&:active { 
 			background-color: $color-black; 
@@ -973,7 +1024,7 @@ h4.how-point-title {
 		&._primary {
 			background-color: $color-orange;
 			&:hover { 
-				background-color: $color-active; 
+				background-color: $color-hover; 
 			}
 			&:active { 
 				background-color: $color-black; 
@@ -2236,12 +2287,6 @@ ul#linky-ul li {
     color: #333;
 }
 
-.errorlist {
-  list-style-type: none;
-  margin: 0 0 26px 0;
-  font-style: italic;
-  color: #888;
-}
 
 /*
 .btn {
@@ -2369,17 +2414,6 @@ a.orange {
 Input Focus
 */
 
-input[type="text"], textarea, button[type="submit"], button#addlink, .infinity-navbar {
-  -webkit-transition: all 0.20s ease-in-out;
-  -moz-transition: all 0.20s ease-in-out;
-  -ms-transition: all 0.20s ease-in-out;
-  -o-transition: all 0.20s ease-in-out;
-  outline: none;
-}
-
-input[type="text"]:focus, textarea:focus, button[type="submit"]:focus, button#addlink:focus {
-  box-shadow: 0 0 5px rgba(81, 203, 238, 1);
-}
 
 .links-tablev, .cool-links-table tr {
     border-bottom: 1px solid #ccc;
@@ -2924,11 +2958,6 @@ img[usemap] {
 		width: auto;
 	}
 
-.temp-form-css input {
-	border: 1px solid #ccc;
-	border-radius: 3px;
-	padding: 6px 12px;
-}
 
 .muted, .muted p {
 	color: #9c9c9c;
@@ -3049,7 +3078,7 @@ ul.navbar-nav.tabbed > li, ul.navbar-nav.tabbed > li a {
 	    }
     }
     &:hover {
-	    background-color: $color-active;
+	    background-color: $color-hover;
     }
     &:active {
 	    background-color: $color-black;
@@ -3383,11 +3412,6 @@ img.dark-bulb {
 	z-index: 1000;
 }
 
-.text-error {
-	color: $color-orange;
-	font-style: italic;
-	font-size: 85%;
-}
 
 .text-remove {
 	font-style: italic;
