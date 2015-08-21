@@ -755,10 +755,10 @@ header navbar-header ul li a.this-page {
 }
 
 .user-docs {
-	margin-top: $grid * 6;
+	margin-top: $grid * 7;
 }
 
-#docs-toc {
+.docs-toc {
 	font-family: $font-hed-alt;
 	font-size: 14px;
 	@include respond-tablet {
@@ -778,11 +778,11 @@ header navbar-header ul li a.this-page {
 			border-top: 1px solid $color-trans-lightgray;
 			&:hover {
 				color: $color-hover;
-				border-color: $color-hover;
+				border-color: $color-hover !important;
 			}
 			&:active {
 				color: $color-active;
-				border-color: $color-active;
+				border-color: $color-active !important;
 			}
 		}
 	}
@@ -798,10 +798,6 @@ header navbar-header ul li a.this-page {
 		font-weight: 300;
 	}
 	
-	.docs-toc-section + .docs-toc-chapter {
-		margin-top: $grid * 3;
-	}
-
     .red {
         color: $color-error;
         border: none;
@@ -809,7 +805,7 @@ header navbar-header ul li a.this-page {
     }
 }
 
-#docs-body {
+.docs-body {
 	h2, h3 {
         font-size: 24px;
 	}
