@@ -682,7 +682,8 @@ header navbar-header ul li a.this-page {
 	h1 { @extend %style-container; }
 	#main {
 		.container {
-			padding: 0;
+			padding-left: 0;
+			padding-right: 0;
 			max-width: none;
 		}
 		.user-docs { @extend %style-container; }
@@ -755,7 +756,8 @@ header navbar-header ul li a.this-page {
 }
 
 .user-docs {
-	margin-top: $grid * 7;
+	padding-top: $grid * 3;
+	margin-top: $grid * 4;
 }
 
 .docs-toc {
@@ -777,13 +779,17 @@ header navbar-header ul li a.this-page {
 			padding: 6px 0;
 			border-top: 1px solid $color-trans-lightgray;
 			&:hover {
-				color: $color-hover;
+				color: $color-hover !important;
 				border-color: $color-hover !important;
 			}
 			&:active {
-				color: $color-active;
+				color: $color-active !important;
 				border-color: $color-active !important;
 			}
+		}
+		&.docs-toc-chapter._active a {
+			border-color: $color-blue;
+			color: $color-blue;
 		}
 	}
 

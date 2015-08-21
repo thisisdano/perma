@@ -9,7 +9,7 @@ Welcome to the Perma.cc user guide. The best place to learn about how Perma.cc w
 {% block bodyclass %}_userguide{% endblock %}
 
 {% block content %}
-<h1 id="overview">Perma.cc user guide</h1>
+<h1>Perma.cc user guide</h1>
 <div class="toc-overview">
 	<div class="toc-overview-container">
 		<div class="toc-module">
@@ -45,10 +45,10 @@ Welcome to the Perma.cc user guide. The best place to learn about how Perma.cc w
 	</div>
 </div>
 
-<div class="container user-docs">
+<div class="container user-docs" id="overview">
 	<div class="col-sm-4 docs-toc" >
 		<ul>
-			<li class="docs-toc-chapter"><a href="#overview">Overview</a></li>
+			<li class="docs-toc-chapter _active"><a href="#overview">Overview</a></li>
 				<li class="docs-toc-section"><a href="#what-is-perma">What is Perma.cc?</a></li>
 				<li class="docs-toc-section"><a href="#what-does-perma-do">What does Perma.cc do?</a></li>
 				<li class="docs-toc-section"><a href="#what-is-vesting">What is vesting?</a></li>
@@ -60,7 +60,7 @@ Welcome to the Perma.cc user guide. The best place to learn about how Perma.cc w
 		<ul>
 	</div>
 	<div class="col-sm-8 docs docs-body">
-		<h2 id="overview">Overview</h2>
+		<h2>Overview</h2>
 		<h3 id="what-is-perma">What is Perma.cc?</h3>
 		<p>Perma.cc is a service that helps prevent link rot.</p>
 		
@@ -79,11 +79,11 @@ Welcome to the Perma.cc user guide. The best place to learn about how Perma.cc w
 		<p>Please <a href="{% url 'register' %}">sign up</a> and give it try, or read on to learn more.
 	</div>
 </div>
-<div class="container user-docs">
+<div class="container user-docs" id="perma-basics">
 	<div class="col-sm-4 docs-toc">
 		<ul>
 			<li class="docs-toc-chapter"><a href="#overview">Overview</a></li>
-			<li class="docs-toc-chapter"><a href="#perma-basics">Perma.cc Basics</a></li>
+			<li class="docs-toc-chapter _active"><a href="#perma-basics">Perma.cc Basics</a></li>
 				<li class="docs-toc-section"><a href="#account-holders">Account-holders</a></li>
 				<li class="docs-toc-section"><a href="#create-account">Creating an account</a></li>
 				<li class="docs-toc-section"><a href="#navigating-account">Navigating your account</a></li>
@@ -100,7 +100,7 @@ Welcome to the Perma.cc user guide. The best place to learn about how Perma.cc w
 		<ul>
 	</div>
 	<div class="col-sm-8 docs-body">
-		<h2 id="perma-basics">Perma.cc Basics</h2>
+		<h2>Perma.cc Basics</h2>
 		<h3 id="account-holders">Account-holders</h3>
 		<p>Perma.cc has three categories of account-holders: (1) registrar users; (2) vesting users; (3) general users. Each category has different authorities and responsibilities.</p>
 		<p><em><strong><span id="registrar-users">Registrar users</span></strong></em> are people who work at libraries and other trusted institutions that have become registrars. They have vesting privileges. They help administer Perma.cc, and they decide which other users and organizations receive vesting privileges. For example, the Harvard Law School Library is a registrar. Some members of the Library staff are registrar users. They grant vesting privileges to new journals and faculty, and they help all of the Harvard Law School journals and faculty members who use Perma.cc. </p>
@@ -239,12 +239,12 @@ Welcome to the Perma.cc user guide. The best place to learn about how Perma.cc w
 	</div>
 </div>
 
-<div class="container user-docs">
+<div class="container user-docs" id="libraries-and-registrars">
 	<div class="col-sm-4 docs-toc">
 		<ul>
 			<li class="docs-toc-chapter"><a href="#overview">Overview</a></li>
 			<li class="docs-toc-chapter"><a href="#perma-basics">Perma.cc Basics</a></li>
-			<li class="docs-toc-chapter"><a href="#libraries-and-registrars">For Libraries and Other Registrars</a></li>
+			<li class="docs-toc-chapter _active"><a href="#libraries-and-registrars">For Libraries and Other Registrars</a></li>
 				<li class="docs-toc-section"><a href="#becoming-registrar">Becoming a registrar</a></li>
 				<li class="docs-toc-section"><a href="#libraries-authority">Authority and responsibilities</a></li>
 				<li class="docs-toc-section"><a href="#creating-vesting-orgs">Creating new vesting orgs</a></li>
@@ -255,7 +255,7 @@ Welcome to the Perma.cc user guide. The best place to learn about how Perma.cc w
 		<ul>
 	</div>
 	<div class="col-sm-8 docs-body">
-		<h2 id="libraries-and-registrars">For Libraries and Other Registrars</h2>
+		<h2>For Libraries and Other Registrars</h2>
 		
 		<h3 id="becoming-registrar">Becoming a registrar</h3>
 		<p>Any academic library can become a registrar for free. Just email us at <a href="mailto:info@perma.cc">info@perma.cc</a> and tell us who you are, what kinds of users and usage you intend to support and who your contact person is. We'll get back to with some very basic setup instructions.</p>
@@ -281,13 +281,13 @@ Welcome to the Perma.cc user guide. The best place to learn about how Perma.cc w
 	</div>
 </div>
 
-<div class="container user-docs">
+<div class="container user-docs" id="journals-vesting-orgs">
 	<div class="col-sm-4 docs-toc">
 		<ul>
 			<li class="docs-toc-chapter"><a href="#overview">Overview</a></li>
 			<li class="docs-toc-chapter"><a href="#perma-basics">Perma.cc Basics</a></li>
 			<li class="docs-toc-chapter"><a href="#libraries-and-registrars">For Libraries and Other Registrars</a></li>
-			<li class="docs-toc-chapter"><a href="#journals-vesting-orgs">For Journals, Courts and Other Vesting Orgs</a></li>
+			<li class="docs-toc-chapter _active"><a href="#journals-vesting-orgs">For Journals, Courts and Other Vesting Orgs</a></li>
 				<li class="docs-toc-section"><a href="#becoming-vesting-org">Becoming a vesting org</a></li>
 				<li class="docs-toc-section"><a href="#journals-authority">Authority and responsibilities</a></li>
 				<li class="docs-toc-section"><a href="#adding-vesting-users">Adding and removing vesting users</a></li>
@@ -295,7 +295,7 @@ Welcome to the Perma.cc user guide. The best place to learn about how Perma.cc w
 		<ul>
 	</div>
 	<div class="col-sm-8 docs-body">
-		<h2 id="journals-vesting-orgs">For Journals, Courts and Other Vesting Organizations</h2>
+		<h2>For Journals, Courts and Other Vesting Organizations</h2>
 		
 		<h3 id="becoming-vesting-org">Becoming a vesting org</h3>
 		<p>If you're with an academic institution, simply contact your library and ask if it is a Perma.cc registrar. If your library isn't yet a registrar, ask them to contact us at <a href="mailto:info@perma.cc">info@perma.cc</a> about joining Perma.cc as a registrar. If you're part of a court or other governmental entity, please contact us directly and we'll help you get started.</p>  
