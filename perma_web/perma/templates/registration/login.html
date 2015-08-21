@@ -21,12 +21,14 @@ Log in to your Perma.cc account. Welcome back.
                      <fieldset>
                         	<span class="text-error">{{ form.non_field_errors }}</span>
 							{% for field in form %}
-								<label for="id_{{ field.name }}">{{ field.label }}</label>
-								{{ field }}
-								{% if field.errors %}
-									{% for error in field.errors %}<span class="text-error">{{ error }}</span>{% endfor %}
-								{%elif field.help_text %}
-									<span class="help-inline">{{ field.help_text }}</span>
+								<div class="form-group">
+									<label for="id_{{ field.name }}">{{ field.label }}</label>
+									{{ field }}
+									{% if field.errors %}
+										{% for error in field.errors %}<span class="text-error">{{ error }}</span>{% endfor %}
+									{%elif field.help_text %}
+										<span class="help-inline">{{ field.help_text }}</span>
+								</div>
 								{% endif %}
 							{% endfor %}
                     </fieldset>

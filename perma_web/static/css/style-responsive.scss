@@ -451,6 +451,9 @@ body {
 			width: auto;
 		}
 	}
+	.form-group + .form-group {
+		margin-top: $double;
+	}
 }
 
 /////////////////////////
