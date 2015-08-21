@@ -678,37 +678,53 @@ header navbar-header ul li a.this-page {
 
 // docs
 
+._userguide {
+	h1 { @extend %style-container; }
+	#main {
+		.container {
+			padding: 0;
+			max-width: none;
+		}
+		.user-docs { @extend %style-container; }
+		.toc-overview-container { @extend %style-container; }
+	}
+}
+
 .toc-overview {
-	margin: $grid * 6 -$grid * 1.5 0 -$grid * 1.5;
+	margin: $grid * 6 0 0 0;
+	background-color: $color-background;
+	border-radius: 2px;
 	@extend %style-clears-floats;
 }
+
+
 
 .toc-module {
 	float: left;
 	width: 20%;
-	display: table;
+	&:first-child {
+		a {
+			border-left: 2px solid white;
+		}
+	}
 	a {
+		border-right: 2px solid white;
+		height: 11.5em;
 		display: block;
-		margin: 0 $grid * 1.5;
-		padding-top: $grid;
-		border-top: 1px solid $color-blue;
+		margin: 0;
+		padding: $double;
 		&:hover {
-			color: $color-hover;
+			background-color: $color-blue;
+			color: white;
 			p {
-				color: $color-hover;
+				color: white;
 			}
 			strong:after {
-			    background-position: -9px * 3;
+			    background-position: -9px * 5;
 			}
 		}
 		&:active {
-			color: $color-active;
-			p {
-				color: $color-active;
-			}
-			strong:after {
-			    background-position: -9px * 0;
-			}
+			background-color: $color-black;
 		}
 	}
 	strong {
@@ -726,6 +742,7 @@ header navbar-header ul li a.this-page {
 		    background-position: -9px * 2;
 		    top: 2px;
 			margin-left: $grid;
+			margin-right: -17px;
 		}
 	}
 	p {
