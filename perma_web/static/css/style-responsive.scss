@@ -678,6 +678,65 @@ header navbar-header ul li a.this-page {
 
 // docs
 
+.toc-overview {
+	margin: $grid * 6 -$grid * 1.5 0 -$grid * 1.5;
+	@extend %style-clears-floats;
+}
+
+.toc-module {
+	float: left;
+	width: 20%;
+	display: table;
+	a {
+		display: block;
+		margin: 0 $grid * 1.5;
+		padding-top: $grid;
+		border-top: 1px solid $color-blue;
+		&:hover {
+			color: $color-hover;
+			p {
+				color: $color-hover;
+			}
+			strong:after {
+			    background-position: -9px * 3;
+			}
+		}
+		&:active {
+			color: $color-active;
+			p {
+				color: $color-active;
+			}
+			strong:after {
+			    background-position: -9px * 0;
+			}
+		}
+	}
+	strong {
+		display: block;
+		font-weight: 800;
+		font-size: 20px;
+		&:after {
+		    content: '';
+		    height: 17px;
+		    width: 9px;
+		    display: inline-block;
+		    background-image: url('../img/ui/perma-ui-chev-right-small.png');
+		    background-repeat: no-repeat;
+		    background-size: 54px 17px;
+		    background-position: -9px * 2;
+		    top: 2px;
+			margin-left: $grid;
+		}
+	}
+	p {
+		font-family: $font-hed-alt;
+		font-weight: 300;
+		margin-top: $grid;
+		font-size: 14px;
+		padding-right: $grid;
+	}
+}
+
 .user-docs {
 	margin-top: $grid * 6;
 }
@@ -739,29 +798,30 @@ header navbar-header ul li a.this-page {
 	}
 	
     h2 {
-        border-top: 1px solid $color-orange;
+        border-top: 1px solid $color-blue;
         padding-top: $grid;
-        margin-top: $grid * 4;
+        margin-top: $grid * 8;
         font-family: $font-hed-alt;
         font-weight: 700;
+        color: $color-blue;
         &:first-child {
 	        margin-top: 0;
         }
     }
 
     h3 {
-        border-top: 1px solid $color-trans-lightgray;
+        border-top: 1px solid $color-black;
         padding-top: $grid;
-        margin-top: $grid * 4;
+        margin-top: $grid * 6;
         font-family: $font-hed-alt;
-        font-weight: 400;
-        font-size: 20px;
+        font-weight: 700;
+        font-size: 18px;
         color: $color-black;
     }
         
     p {
         font-family: $font-body;
-        font-size: 16px;
+        font-size: 18px;
     }
 
 

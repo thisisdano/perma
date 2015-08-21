@@ -8,6 +8,39 @@ Welcome to the Perma.cc user guide. The best place to learn about how Perma.cc w
 
 {% block content %}
 <h1 id="overview">Perma.cc user guide</h1>
+<div class="toc-overview">
+	<div class="toc-module">
+		<a class="toc-module-content" href="#">
+			<strong class="toc-module-title">Overview</strong>
+			<p class="toc-module-description">An introduction to Perma.cc, why it exists, and how people and organizations are using it.</p>
+		</a>
+	</div>
+	<div class="toc-module">
+		<a class="toc-module-content" href="#">
+			<strong class="toc-module-title">Perma.cc basics</strong>
+			<p class="toc-module-description">Learn the different kinds of users, organizations, and privileges. Learn to create, use, and organize Perma Links.</p>
+		</a>
+	</div>
+	<div class="toc-module">
+		<a class="toc-module-content" href="#">
+			<strong class="toc-module-title">Libraries and other institutions</strong>
+			<p class="toc-module-description">Libraries have a special role in Perma.cc — learn how to use Perma.cc to support your journals and faculty.</p>
+		</a>
+	</div>
+	<div class="toc-module">
+		<a class="toc-module-content" href="#">
+			<strong class="toc-module-title">Journals, courts, and other organizations</strong>
+			<p class="toc-module-description">Learn how journal, courts, and other orgnizations use Perma.cc and support their members.</p>
+		</a>
+	</div>
+	<div class="toc-module">
+		<a class="toc-module-content" href="#">
+			<strong class="toc-module-title">Frequently asked questions</strong>
+			<p class="toc-module-description">Learn how journal, courts, and other orgnizations use Perma.cc and support their members.</p>
+		</a>
+	</div>
+</div>
+
 <div class="container user-docs">
 	<div class="col-sm-4" id="docs-toc">
 		<ul>
@@ -55,7 +88,7 @@ Welcome to the Perma.cc user guide. The best place to learn about how Perma.cc w
 				<p>While anyone can use Perma.cc to create unvested links, only designated users (we call them <em>vesting users</em>) have the authority to vest links. Perma.cc's partner libraries - called "registrars" - decide who gets vesting authority. </p>
 			<h3 id="example-perma">Perma.cc example</h3>
 				<p>Suppose you're a law professor working on an article and you want to cite to the FBI's <a href="http://www.fbi.gov/wanted/topten">Top Ten Most Wanted List</a>. Because that list changes over time, your citation is going to rot and your future readers won't be able to access your actual source at the original URL. That's bad for you and your readers.</p>
-				<p>But if you give Perma.cc the web address - e.g. <a href="http://www.fbi.gov/wanted/topten">http://www.fbi.gov/wanted/topten</a> - our software will visit the page, make a record of it and give you a unique URL that points to the preserved record - e.g. <a href="https://perma.cc/T8U2-994F?type=source">http://perma.cc/T8U2-994F</a>.</p>
+				<p>But if you give Perma.cc the web address - e.g. <a href="http://www.fbi.gov/wanted/topten">http://www.fbi.gov/wanted/topten</a> - our software will visit the page, make a record of it and give you a unique URL that points to the preserved record - e.g. <a class="perma" href="https://perma.cc/T8U2-994F?type=source">perma.cc/T8U2-994F</a>.</p>
 				<p>If you have vesting privileges, you can vest the link yourself. Or, when you submit your article for publication, the publishing journal can vest the link. At that point, the link can be added to your citation, and your future readers will be able to access the intended source no matter what happens to the original web page.</p>
 				<p>Please <a href="{% url 'register' %}">sign up</a> and give it try, or read on to learn more.
 				<h2 id="perma-basics">Perma.cc Basics</h2>
