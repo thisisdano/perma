@@ -323,7 +323,7 @@ kbd a:hover, kbd:hover, kbd:active {
 	cursor: pointer;
 	border: none !important;
 	border-radius: 2px;
-	background-color: $color-trans-gray;
+	background-color: $color-blue;
 	-webkit-user-select: none;
 	-moz-user-select: none;
 	-ms-user-select: none;
@@ -715,17 +715,33 @@ header navbar-header ul li a.this-page {
 		margin: 0;
 		padding: $double;
 		&:hover {
-			background-color: $color-blue;
+			background-color: $color-blue !important;
 			color: white;
-			p {
-				color: white;
+			p, strong {
+				color: white !important;
 			}
 			strong:after {
-			    background-position: -9px * 5;
+			    background-position: -9px * 5 !important;
 			}
 		}
 		&:active {
-			background-color: $color-black;
+			background-color: $color-black !important;
+		}
+	}
+	a._jump {
+		height: 5.75em;
+		background-color: $color-trans-whispergray;
+		padding-top: 19px;
+		+ a {
+			border-top: 2px solid white;
+		}
+		strong {
+			font-weight: 300;
+			color: $color-orange;
+			&:after {
+				background-position: -9px * 0;
+				top: 3px;
+			}
 		}
 	}
 	strong {
