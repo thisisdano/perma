@@ -342,11 +342,11 @@ kbd a:hover, kbd:hover, kbd:active {
 		}
 	}
 	&:hover {
-		background-color: $color-hover;
+		background-color: $color-hover !important;
 		text-decoration: none !important;
 	}
 	&:active {
-		background-color: $color-black;
+		background-color: $color-black !important;
 	}
 	& + .btn {
 		margin-top: $grid * 2;
@@ -355,6 +355,7 @@ kbd a:hover, kbd:hover, kbd:active {
 		margin-top: 0;
 		margin-left: $grid * 4;
 		margin-bottom: 0;
+		background-color: $color-trans-gray;
 	}
 }
 
@@ -832,33 +833,9 @@ header navbar-header ul li a.this-page {
         font-size: 24px;
 	}
 	
-    h2 {
-        border-top: 1px solid $color-blue;
-        padding-top: $grid;
-        margin-top: $grid * 8;
-        font-family: $font-hed-alt;
-        font-weight: 700;
-        color: $color-blue;
-        &:first-child {
-	        margin-top: 0;
-        }
-    }
-
-    h3 {
-        border-top: 1px solid $color-black;
-        padding-top: $grid;
-        margin-top: $grid * 6;
-        font-family: $font-hed-alt;
-        font-weight: 700;
-        font-size: 18px;
-        color: $color-black;
-    }
-        
-    p {
-        font-family: $font-body;
-        font-size: 18px;
-    }
-
+    h2 { @extend %style-docs-ah; }
+    h3 { @extend %style-docs-bh; }
+    p { @extend %style-body-text; }
 
     table {
         h4 {
@@ -871,6 +848,15 @@ header navbar-header ul li a.this-page {
     }
 }
 
+/////////////////////////
+
+// faq
+
+body._faq {
+	.faq-section-title { @extend %style-docs-ah; }
+	.faq-question { @extend %style-docs-bh; }
+	.faq-answer p { @extend %style-body-text; }
+}
 
 /////////////////////////
 
@@ -3052,27 +3038,11 @@ a.underline {
     color: #da4f49;
 }
 
-div.faq div.question {
-    font-size: 16px;
-    margin-top: 0.4em;
-    cursor: pointer;
-    padding-left: 5px;
-}
 
-div.faq div.answer {
-    display: none;
+div.faq-answer {
     margin: .4em 0 0 0;
     color: #333;
     line-height: 1.6;
-    border: 1px solid #efefef;
-    background-color: #f8f8f8;
-    padding: 10px 10px 0 10px;
-     -webkit-box-sizing: border-box; //	Safari/Chrome, other WebKit 
-   -moz-box-sizing: border-box;    //	Firefox, other Gecko 
-    box-sizing: border-box;
-    border-radius: 3px;
-    text-shadow: 0px -1px 0px #fff;
-
 }
 
 .hide {
