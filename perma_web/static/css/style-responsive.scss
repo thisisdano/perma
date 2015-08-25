@@ -722,6 +722,11 @@ header navbar-header ul li a.this-page {
 
 .toc-module { @extend %style-overview-module; }
 
+.user-docs {
+	padding-top: $grid * 3;
+	margin-top: $grid * 4;
+}
+
 .docs-toc {
 	font-family: $font-hed-alt;
 	font-size: 14px;
