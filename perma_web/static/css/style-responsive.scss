@@ -58,7 +58,7 @@ body._welcome #main {
 
 // general styles
 
-// this body tage used for specificity, since django-pipeline seems to be compiling the css in the wrong order.
+// this body tag is used for specificity, since django-pipeline seems to be compiling the css in the wrong order.
 
 body {
 	h1, h2, h3, h4, h5 { 
@@ -69,6 +69,9 @@ body {
 		@include respond-tablet {
 			font-family: $font-body;
 			font-weight: 300;
+		}
+		&:first-child {
+			margin-top: 0;
 		}
 	}
 	
@@ -96,6 +99,10 @@ body {
 
 	p {
 		line-height: 1.5;
+		max-width: $width-max-measure;
+		&:last-child {
+			margin-bottom: 0;
+		}
 	}
 }
 
@@ -220,10 +227,13 @@ p {
     color: $color-black;
 }
 
-p.body {
-	font-size: 16px;
-    line-height: 1.6;
+p.body { @extend %style-body-text; }
+
+.lockup p { @extend %style-pageLede; } 
+.lockup + div {
+	margin-top: $grid * 6;
 }
+
 
 div.caption {
 	margin-top: $grid * 3;
@@ -245,12 +255,6 @@ strong {
 	&.vocab {
 		color: $color-orange;
 	}
-}
-
-.docs p, .docs li {
-    font-weight: 300;
-   	font-weight: 300;
-   	font-size: 16px;
 }
 
 pre {
@@ -440,6 +444,9 @@ body {
 			padding: $grid $grid $grid * 3 $grid * 3;
 		}
 	}
+	h3 + fieldset {
+		margin-top: $double;
+	}
 	label, input {
 		display: block;
 		font-family: $font-hed-alt;
@@ -465,6 +472,18 @@ body {
 		    background-color: $color-white;
 	    }
 	}
+	input[type="checkbox"] {
+		width: auto;
+	}
+	div.checkbox {
+		padding: $grid;
+	    background-color: $color-highlight;
+	    margin-right: $double;
+	    margin-top: $grid * 3;
+	    border-radius: 2px;
+	    padding-top: $grid;
+	    padding-left: 36px;
+ 	}
 	._error {
 		input {
 			border-color: $color-error;
@@ -511,6 +530,13 @@ body {
 			  margin-top: 4px;
 		  }
 	  }
+	}
+}
+
+.col-sm-4 form .form-group {
+	@include respond-tablet {
+		float: none;
+		width: 100%;
 	}
 }
 
@@ -680,7 +706,7 @@ header navbar-header ul li a.this-page {
 // docs
 
 ._userguide {
-	h1 { @extend %style-container; }
+	.lockup { @extend %style-container; }
 	#main {
 		.container {
 			padding-left: 0;
@@ -692,90 +718,9 @@ header navbar-header ul li a.this-page {
 	}
 }
 
-.toc-overview {
-	margin: $grid * 6 0 0 0;
-	background-color: $color-background;
-	border-radius: 2px;
-	@extend %style-clears-floats;
-}
+.toc-overview { @extend %style-overview-container; }
 
-
-
-.toc-module {
-	float: left;
-	width: 20%;
-	&:first-child {
-		a {
-			border-left: 2px solid white;
-		}
-	}
-	a {
-		border-right: 2px solid white;
-		height: 11.5em;
-		display: block;
-		margin: 0;
-		padding: $double;
-		&:hover {
-			background-color: $color-blue !important;
-			color: white;
-			p, strong {
-				color: white !important;
-			}
-			strong:after {
-			    background-position: -9px * 5 !important;
-			}
-		}
-		&:active {
-			background-color: $color-black !important;
-		}
-	}
-	a._jump {
-		height: 5.75em;
-		background-color: $color-trans-whispergray;
-		padding-top: 19px;
-		+ a {
-			border-top: 2px solid white;
-		}
-		strong {
-			font-weight: 300;
-			color: $color-orange;
-			&:after {
-				background-position: -9px * 0;
-				top: 3px;
-			}
-		}
-	}
-	strong {
-		display: block;
-		font-weight: 800;
-		font-size: 20px;
-		&:after {
-		    content: '';
-		    height: 17px;
-		    width: 9px;
-		    display: inline-block;
-		    background-image: url('../img/ui/perma-ui-chev-right-small.png');
-		    background-repeat: no-repeat;
-		    background-size: 54px 17px;
-		    background-position: -9px * 2;
-		    top: 2px;
-			margin-left: $grid;
-			margin-right: -17px;
-		}
-	}
-	p {
-		font-family: $font-hed-alt;
-		font-weight: 300;
-		margin-top: $grid;
-		font-size: 14px;
-		padding-right: $grid;
-	}
-}
-
-.user-docs {
-	padding-top: $grid * 3;
-	margin-top: $grid * 4;
-}
+.toc-module { @extend %style-overview-module; }
 
 .docs-toc {
 	font-family: $font-hed-alt;
@@ -857,6 +802,46 @@ body._faq {
 	.faq-question { @extend %style-docs-bh; }
 	.faq-answer p { @extend %style-body-text; }
 }
+
+/////////////////////////
+
+// signup
+
+._signup {
+	.lockup { @extend %style-container; }
+	#main {
+		.container {
+			padding-left: 0;
+			padding-right: 0;
+			max-width: none;
+		}
+		.signup-learnMore { @extend %style-container; }
+		.signup-overview-container { @extend %style-container; }
+	}
+}
+
+.signup-overview {
+	@extend %style-overview-container;
+}
+
+.signup-module {
+	@extend %style-overview-module;
+}
+
+.signup-learnMore {
+    h2 { @extend %style-docs-ah; }
+    h3 { @extend %style-docs-bh; }
+    p { @extend %style-body-text; }
+}
+
+
+.signup-learnMore-content {
+	@include respond-tablet {
+		padding-left: $grid * 6;
+	}
+}
+
+
 
 /////////////////////////
 
