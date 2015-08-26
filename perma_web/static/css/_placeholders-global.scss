@@ -2,6 +2,14 @@
 
 // placeholders used to extend common elements
 
+//	style- : helper styles
+
+// PRODUCTION CLASS HOOKS
+
+//	b-	: block
+//	e-	: element
+//	_	: modifier
+
 %style-clears-floats {
 	&:after {
 		display: table;
