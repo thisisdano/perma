@@ -125,7 +125,7 @@ a.perma, p a.perma {
 	color: $color-blue;
 	white-space: nowrap;
 	font-size: 12px;
-	padding: 4px 4px 4px 2px;
+	padding: 4px 4px 4px 4px;
 	border: 2px solid $color-blue;
 	vertical-align: middle;
 	border-radius: 2px;
@@ -148,7 +148,7 @@ a.perma, p a.perma {
 		content: '';
 		width: 26px;
 		height: 14px;
-		display: inline-block;
+		display: none;
 		margin-right: $half;
 		position: relative;
 		top: 4px;
@@ -159,7 +159,7 @@ a.perma, p a.perma {
 		background-position-x: -28px * 2;
 	}
 	@include respond-tablet {
-		padding: 6px 6px 6px 4px;
+		padding: 6px 6px 6px 6px;
 		font-size: 14px;
 		&:before {
 			width: 30px;
